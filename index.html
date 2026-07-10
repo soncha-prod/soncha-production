@@ -18,306 +18,608 @@ box-sizing:border-box;
 scroll-behavior:smooth;
 }
 
+
 body{
-font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Arial,sans-serif;
+
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"SF Pro Display",
+Arial,
+sans-serif;
+
 background:#fff;
 color:#111;
+
 transition:.4s;
+
 }
+
 
 body.dark{
+
 background:#000;
 color:#fff;
+
 }
 
+
 a{
+
 text-decoration:none;
 color:inherit;
+
 }
+
+
+
 
 
 /* LOADER */
 
+
 .loader{
+
 position:fixed;
 inset:0;
+
 background:#fff;
+
 display:flex;
 flex-direction:column;
+
 justify-content:center;
 align-items:center;
+
 z-index:9999;
+
 animation:hide 2.5s forwards;
+
 }
+
+
 
 body.dark .loader{
+
 background:#000;
+
 }
+
+
 
 .loader-logo{
+
 width:100px;
 height:100px;
+
 border-radius:30px;
+
 background:#0071e3;
+
 color:white;
+
 display:flex;
+
 align-items:center;
 justify-content:center;
+
 font-size:45px;
+
 font-weight:800;
+
 animation:pulse 1.5s infinite;
+
 }
 
+
+
 .loader p{
+
 margin-top:25px;
+
 font-size:22px;
+
 }
+
 
 
 @keyframes hide{
+
 to{
+
 opacity:0;
+
 visibility:hidden;
-}
+
 }
 
+}
+
+
+
 @keyframes pulse{
+
 50%{
+
 transform:scale(1.1);
+
 }
+
 }
+
+
+
+
 
 
 
 /* NAV */
 
+
 nav{
+
 position:fixed;
+
 top:20px;
+
 left:50%;
+
 transform:translateX(-50%);
+
 width:90%;
+
 max-width:1100px;
+
 padding:18px 30px;
+
 border-radius:50px;
+
 background:rgba(255,255,255,.7);
+
 backdrop-filter:blur(20px);
+
 display:flex;
+
 justify-content:space-between;
+
 align-items:center;
+
 z-index:1000;
+
 }
+
+
 
 body.dark nav{
+
 background:rgba(30,30,30,.7);
+
 }
+
+
 
 .logo{
+
 font-size:24px;
+
 font-weight:700;
+
 }
 
+
+
 .logo span{
+
 color:#0071e3;
+
 }
+
 
 
 .menu{
+
 display:flex;
+
 gap:30px;
+
 }
+
 
 
 .menu a{
+
 color:#666;
+
 transition:.3s;
+
 }
+
 
 
 .menu a:hover{
+
 color:#0071e3;
+
 }
+
 
 
 .theme{
+
 width:45px;
+
 height:45px;
+
 border:none;
+
 border-radius:50%;
+
 cursor:pointer;
+
 font-size:20px;
+
 }
+
+
+
 
 
 
 /* HERO */
 
+
 .hero{
+
 min-height:100vh;
+
 display:flex;
+
 flex-direction:column;
+
 justify-content:center;
+
 align-items:center;
+
 text-align:center;
+
 padding:120px 30px;
+
 }
+
 
 
 .hero h1{
+
 font-size:clamp(70px,12vw,150px);
+
 letter-spacing:-8px;
+
+animation:heroFade 1s ease;
+
 }
+
 
 
 .hero p{
+
 max-width:700px;
+
 margin-top:30px;
+
 font-size:28px;
+
 color:#6e6e73;
+
+animation:heroFade 1.3s ease;
+
 }
+
 
 
 .button{
+
 margin-top:40px;
+
 padding:18px 40px;
+
 border-radius:50px;
+
 background:#0071e3;
+
 color:white;
+
 font-size:18px;
+
 transition:.3s;
+
+animation:heroFade 1.5s ease;
+
 }
+
 
 
 .button:hover{
+
 transform:scale(1.05);
+
 }
+
+
+
+@keyframes heroFade{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
 
 
 
 /* DEVICES */
 
+
 .devices{
+
 margin-top:80px;
+
 display:flex;
+
 gap:40px;
+
 justify-content:center;
+
 align-items:center;
+
 flex-wrap:wrap;
+
 }
+
 
 
 .phone,
 .tablet{
+
 background:#111;
+
 padding:12px;
+
 animation:float 4s infinite;
+
 }
+
 
 
 .phone{
+
 width:280px;
+
 height:560px;
+
 border-radius:45px;
+
 }
+
 
 
 .tablet{
+
 width:520px;
+
 height:360px;
+
 border-radius:40px;
+
 }
+
 
 
 .screen{
+
 height:100%;
+
 border-radius:35px;
+
 background:linear-gradient(135deg,#0071e3,#111);
+
 display:flex;
+
 justify-content:center;
+
 align-items:center;
+
 color:white;
+
 font-size:40px;
+
 font-weight:800;
+
 }
+
 
 
 .tablet .screen{
+
 font-size:60px;
+
 }
+
 
 
 @keyframes float{
+
 50%{
+
 transform:translateY(-20px);
+
 }
+
 }
-
-
-/* SECTIONS */
-
-section{
+    section{
 padding:120px 40px;
 }
 
 
 .title{
+
 text-align:center;
+
 font-size:65px;
+
 }
+
+
+
+/* REVEAL ANIMATION */
+
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:1s ease;
+
+}
+
+
+.reveal.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+
+/* CARDS */
 
 
 .cards{
+
 display:flex;
+
 justify-content:center;
+
 gap:35px;
+
 flex-wrap:wrap;
+
 margin-top:70px;
+
 }
+
 
 
 .card{
+
 width:330px;
+
 background:white;
+
 border-radius:35px;
+
 overflow:hidden;
-transition:.4s;
+
+transition:.5s;
+
+opacity:0;
+
+transform:translateY(50px);
+
 }
+
 
 
 body.dark .card{
+
 background:#1c1c1e;
+
 }
+
+
+
+.card.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
 
 
 .card:hover{
+
 transform:translateY(-15px) scale(1.03);
+
 }
+
 
 
 .card img{
+
 width:100%;
+
 height:220px;
+
 object-fit:cover;
+
 }
+
 
 
 .card h3{
+
 font-size:32px;
+
 margin:25px;
+
 }
+
 
 
 .card p{
+
 margin:0 25px 30px;
+
 color:#6e6e73;
+
 }
-    form{
+
+
+
+
+form{
+
 max-width:500px;
+
 margin:50px auto;
+
 display:flex;
+
 flex-direction:column;
+
 gap:20px;
+
 }
+
 
 
 input,
@@ -332,6 +634,7 @@ border:1px solid #ddd;
 font-size:16px;
 
 }
+
 
 
 textarea{
@@ -355,12 +658,14 @@ color:#777;
 }
 
 
+
 </style>
 
 </head>
 
 
 <body>
+
 
 
 <div class="loader">
@@ -393,9 +698,7 @@ Soncha<span>Production</span>
 </div>
 
 
-
 <div class="menu">
-
 
 <a href="#home">Главная</a>
 
@@ -407,9 +710,7 @@ Soncha<span>Production</span>
 
 <a href="#contact">Контакты</a>
 
-
 </div>
-
 
 
 <button class="theme" onclick="theme()">
@@ -443,7 +744,6 @@ Soncha
 </p>
 
 
-
 <a class="button" href="#contact">
 
 Обсудить проект →
@@ -468,7 +768,6 @@ Soncha
 
 
 
-
 <div class="tablet">
 
 <div class="screen">
@@ -480,8 +779,8 @@ Soncha
 </div>
 
 
-</div>
 
+</div>
 
 
 </section>
@@ -491,9 +790,7 @@ Soncha
 
 
 
-
-
-<section id="projects">
+<section id="projects" class="reveal">
 
 
 <h2 class="title">
@@ -532,7 +829,6 @@ Website
 
 
 
-
 <div class="card">
 
 
@@ -554,7 +850,6 @@ UI/UX дизайн и визуальные концепции.
 
 
 </div>
-
 
 
 
@@ -582,6 +877,7 @@ Future
 </div>
 
 
+
 </div>
 
 
@@ -592,8 +888,7 @@ Future
 
 
 
-
-<section id="services">
+<section id="services" class="reveal">
 
 
 <h2 class="title">
@@ -603,23 +898,14 @@ Future
 </h2>
 
 
-
 <div class="cards">
 
 
 <div class="card">
 
-<h3>
+<h3>💻 Web</h3>
 
-💻 Web
-
-</h3>
-
-<p>
-
-Создание сайтов.
-
-</p>
+<p>Создание сайтов.</p>
 
 </div>
 
@@ -627,17 +913,9 @@ Future
 
 <div class="card">
 
-<h3>
+<h3>🎨 Design</h3>
 
-🎨 Design
-
-</h3>
-
-<p>
-
-Интерфейсы и стиль.
-
-</p>
+<p>Интерфейсы и стиль.</p>
 
 </div>
 
@@ -645,20 +923,11 @@ Future
 
 <div class="card">
 
-<h3>
+<h3>🚀 Future</h3>
 
-🚀 Future
-
-</h3>
-
-<p>
-
-Новые идеи.
-
-</p>
+<p>Новые идеи.</p>
 
 </div>
-
 
 
 </div>
@@ -671,8 +940,7 @@ Future
 
 
 
-
-<section id="about">
+<section id="about" class="reveal">
 
 
 <h2 class="title">
@@ -682,75 +950,11 @@ Future
 </h2>
 
 
-
 <p style="text-align:center;font-size:25px;margin-top:40px;">
 
 Создаю минималистичные цифровые продукты.
 
 </p>
-
-
-
-
-<div style="display:flex;justify-content:center;gap:70px;margin-top:70px;text-align:center;flex-wrap:wrap;">
-
-
-<div>
-
-<h2>
-
-3+
-
-</h2>
-
-<p>
-
-Проекта
-
-</p>
-
-</div>
-
-
-
-<div>
-
-<h2>
-
-100%
-
-</h2>
-
-<p>
-
-Внимание к деталям
-
-</p>
-
-</div>
-
-
-
-<div>
-
-<h2>
-
-∞
-
-</h2>
-
-<p>
-
-Идей
-
-</p>
-
-</div>
-
-
-
-</div>
-
 
 
 </section>
@@ -759,10 +963,7 @@ Future
 
 
 
-
-
-
-<section id="contact">
+<section id="contact" class="reveal">
 
 
 <h2 class="title">
@@ -795,10 +996,7 @@ Future
 </form>
 
 
-
 </section>
-
-
 
 
 
@@ -814,7 +1012,6 @@ Future
 
 
 
-
 <script>
 
 
@@ -825,8 +1022,60 @@ document.body.classList.toggle("dark");
 }
 
 
-</script>
 
+
+function reveal(){
+
+
+let elements=document.querySelectorAll(".reveal");
+
+
+elements.forEach(el=>{
+
+
+let top=el.getBoundingClientRect().top;
+
+
+if(top < window.innerHeight - 100){
+
+el.classList.add("active");
+
+}
+
+
+});
+
+
+}
+
+
+
+window.addEventListener("scroll",reveal);
+
+reveal();
+
+
+
+
+
+let cards=document.querySelectorAll(".card");
+
+
+cards.forEach((card,index)=>{
+
+
+setTimeout(()=>{
+
+card.classList.add("show");
+
+},index*200);
+
+
+});
+
+
+
+</script>
 
 
 </body>
