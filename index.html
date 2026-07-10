@@ -15,49 +15,48 @@ Soncha Production — Digital Design
 <style>
 
 
-* {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 
+body{
 
-body {
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"SF Pro Display",
+Arial,
+sans-serif;
 
-    font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "SF Pro Display",
-    Arial,
-    sans-serif;
+background:#fff;
 
-    background:#fff;
+color:#111;
 
-    color:#111;
-
-    transition:.4s;
-
-}
-
-
-
-body.dark {
-
-    background:#000;
-
-    color:#fff;
+transition:.4s;
 
 }
 
 
 
-a {
+body.dark{
 
-    text-decoration:none;
+background:#000;
 
-    color:inherit;
+color:#fff;
+
+}
+
+
+
+a{
+
+text-decoration:none;
+
+color:inherit;
 
 }
 
@@ -68,79 +67,82 @@ a {
 /* LOADER */
 
 
-.loader {
+.loader{
 
-    position:fixed;
+position:fixed;
 
-    inset:0;
+inset:0;
 
-    background:white;
+background:#fff;
 
-    display:flex;
+display:flex;
 
-    flex-direction:column;
+flex-direction:column;
 
-    justify-content:center;
+justify-content:center;
 
-    align-items:center;
+align-items:center;
 
-    z-index:9999;
+z-index:9999;
 
-    animation:loaderHide 2.5s forwards;
-
-}
-
-
-
-body.dark .loader {
-
-    background:#000;
+animation:loaderHide 2.5s forwards;
 
 }
 
 
 
-.loader-logo {
+body.dark .loader{
 
-    width:100px;
-
-    height:100px;
-
-    border-radius:32px;
-
-    background:
-    linear-gradient(145deg,#111,#333);
-
-    color:white;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:65px;
-
-    font-weight:800;
-    font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "SF Pro Display",
-        sans-serif;
-    box-shadow:
-    0 20px  60px rgba (0,0,0,.35);
-
-    animation:pulse 1.8s infinite;
+background:#000;
 
 }
 
 
 
-.loader p {
+.loader-logo{
 
-    margin-top:25px;
+width:100px;
 
-    font-size:22px;
+height:100px;
+
+border-radius:32px;
+
+background:
+
+linear-gradient(
+145deg,
+#111,
+#333
+);
+
+
+color:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:65px;
+
+font-weight:800;
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.35);
+
+animation:pulse 1.8s infinite;
+
+}
+
+
+
+.loader p{
+
+margin-top:25px;
+
+font-size:22px;
 
 }
 
@@ -148,43 +150,35 @@ body.dark .loader {
 
 
 
-@keyframes loaderHide {
+@keyframes loaderHide{
 
-    0% {
+0%{
+opacity:1;
+}
 
-        opacity:1;
+80%{
+opacity:1;
+}
 
-    }
+100%{
 
+opacity:0;
 
-    80% {
+visibility:hidden;
 
-        opacity:1;
-
-    }
-
-
-    100% {
-
-        opacity:0;
-
-        visibility:hidden;
-
-    }
+}
 
 }
 
 
 
-@keyframes pulse {
+@keyframes pulse{
 
+50%{
 
-50% {
-
-    transform:scale(1.1);
+transform:scale(1.1);
 
 }
-
 
 }
 
@@ -193,64 +187,52 @@ body.dark .loader {
 
 
 
-/* NAVIGATION */
 
 
-nav {
-
-    position:fixed;
-
-    top:20px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:90%;
-
-    max-width:1100px;
-
-    padding:18px 30px;
-
-    border-radius:50px;
-
-    background:rgba(255,255,255,.7);
-
-    backdrop-filter:blur(20px);
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    z-index:1000;
-
-}
+/* NAV */
 
 
+nav{
 
-body.dark nav {
+position:fixed;
 
-    background:rgba(20,20,20,.7);
+top:20px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:90%;
+
+max-width:1100px;
+
+padding:18px 30px;
+
+border-radius:50px;
+
+background:
+
+rgba(255,255,255,.7);
+
+backdrop-filter:blur(20px);
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+z-index:1000;
 
 }
 
 
 
-.logo {
+body.dark nav{
 
-    font-size:24px;
+background:
 
-    font-weight:700;
-
-}
-
-
-
-.logo span {
-
-    color:#0071e3;
+rgba(20,20,20,.7);
 
 }
 
@@ -258,29 +240,59 @@ body.dark nav {
 
 
 
-.menu {
+.logo{
 
-    display:flex;
+display:flex;
 
-    gap:30px;
+align-items:center;
 
-}
+font-size:24px;
 
-
-
-.menu a {
-
-    color:#666;
-
-    transition:.3s;
+font-weight:700;
 
 }
 
 
 
-.menu a:hover {
+.logo span{
 
-    color:#0071e3;
+color:#0071e3;
+
+}
+
+
+
+.logo-s{
+
+width:40px;
+
+height:40px;
+
+border-radius:13px;
+
+background:
+
+linear-gradient(
+145deg,
+#111,
+#333
+);
+
+color:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+margin-right:10px;
+
+font-size:25px;
+
+box-shadow:
+
+0 10px 30px rgba(0,0,0,.25);
 
 }
 
@@ -288,19 +300,49 @@ body.dark nav {
 
 
 
-.theme {
+.menu{
 
-    border:none;
+display:flex;
 
-    background:#eee;
+gap:30px;
 
-    width:42px;
+}
 
-    height:42px;
 
-    border-radius:50%;
 
-    cursor:pointer;
+.menu a{
+
+color:#777;
+
+transition:.3s;
+
+}
+
+
+
+.menu a:hover{
+
+color:#0071e3;
+
+}
+
+
+
+
+
+.theme{
+
+border:none;
+
+background:#eee;
+
+width:42px;
+
+height:42px;
+
+border-radius:50%;
+
+cursor:pointer;
 
 }
 
@@ -311,137 +353,142 @@ body.dark nav {
 /* HERO */
 
 
-.hero {
+.hero{
 
-    min-height:100vh;
+min-height:100vh;
 
-    display:flex;
+display:flex;
 
-    flex-direction:column;
+flex-direction:column;
 
-    justify-content:center;
+justify-content:center;
 
-    align-items:center;
+align-items:center;
 
-    text-align:center;
+text-align:center;
 
-    padding:120px 30px;
-
-}
-
-
-
-.hero h1 {
-
-    font-size:
-
-    clamp(70px,12vw,150px);
-
-    letter-spacing:-8px;
-
-    animation:fadeUp 1s;
+padding:120px 30px;
 
 }
 
 
 
-.hero p {
+.hero h1{
 
-    max-width:700px;
+font-size:
 
-    margin-top:35px;
+clamp(70px,12vw,150px);
 
-    font-size:28px;
+letter-spacing:-8px;
 
-    color:#6e6e73;
-
-    animation:fadeUp 1.3s;
+animation:fadeUp 1s;
 
 }
 
 
 
-.main-btn {
+.hero p{
 
-    margin-top:45px;
+max-width:700px;
 
-    padding:18px 40px;
+margin-top:35px;
 
-    border-radius:50px;
+font-size:28px;
 
-    background:#0071e3;
+color:#6e6e73;
 
-    color:white;
-
-    font-size:18px;
-
-    transition:.4s;
+animation:fadeUp 1.3s;
 
 }
 
 
 
-.main-btn:hover {
+.main-btn{
 
-    transform:translateY(-5px) scale(1.05);
+margin-top:45px;
 
-}
-    /* DEVICE PREVIEW */
+padding:18px 40px;
 
+border-radius:50px;
 
-.device {
+background:#0071e3;
 
-    margin-top:90px;
+color:white;
 
-    width:320px;
+font-size:18px;
 
-    height:620px;
-
-    border-radius:45px;
-
-    background:#111;
-
-    padding:12px;
-
-    box-shadow:
-
-    0 40px 100px rgba(0,0,0,.25);
-
-    animation:floating 4s infinite;
+transition:.4s;
 
 }
 
 
 
-.screen {
+.main-btn:hover{
 
-    width:100%;
+transform:
 
-    height:100%;
-
-    border-radius:35px;
-
-    background:
-
-    linear-gradient(
-    135deg,
-    #0071e3,
-    #111
-    );
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    color:white;
-
-    font-size:40px;
-
-    font-weight:700;
+translateY(-5px)
+scale(1.05);
 
 }
+    /* DEVICE */
+
+
+.device{
+
+margin-top:90px;
+
+width:320px;
+
+height:620px;
+
+border-radius:45px;
+
+background:#111;
+
+padding:12px;
+
+box-shadow:
+
+0 40px 100px rgba(0,0,0,.25);
+
+animation:floating 4s infinite;
+
+}
+
+
+
+.screen{
+
+width:100%;
+
+height:100%;
+
+border-radius:35px;
+
+background:
+
+linear-gradient(
+135deg,
+#0071e3,
+#111
+);
+
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:white;
+
+font-size:40px;
+
+font-weight:700;
+
+}
+
 
 
 
@@ -451,130 +498,131 @@ body.dark nav {
 /* PROJECTS */
 
 
-.projects {
+.projects{
 
-    padding:140px 40px;
+padding:140px 40px;
 
-    background:#f5f5f7;
+background:#f5f5f7;
 
-    text-align:center;
-
-}
-
-
-
-body.dark .projects {
-
-    background:#111;
+text-align:center;
 
 }
 
 
 
-.projects h2 {
+body.dark .projects{
 
-    font-size:70px;
-
-    letter-spacing:-4px;
+background:#111;
 
 }
 
 
 
-.cards {
+.projects h2{
 
-    margin-top:80px;
+font-size:70px;
 
-    display:flex;
-
-    justify-content:center;
-
-    gap:35px;
-
-    flex-wrap:wrap;
+letter-spacing:-4px;
 
 }
 
 
 
-.card {
+.cards{
 
-    width:330px;
+margin-top:80px;
 
-    background:white;
+display:flex;
 
-    border-radius:35px;
+justify-content:center;
 
-    overflow:hidden;
+gap:35px;
 
-    transition:.5s;
-
-}
-
-
-
-body.dark .card {
-
-    background:#1c1c1e;
+flex-wrap:wrap;
 
 }
 
 
 
-.card:hover {
+.card{
 
-    transform:
+width:330px;
 
-    translateY(-20px)
+background:white;
 
-    scale(1.03);
+border-radius:35px;
 
+overflow:hidden;
 
-    box-shadow:
+transition:.5s;
 
-    0 35px 80px rgba(0,0,0,.2);
-
-}
-
-
-
-.card img {
-
-    width:100%;
-
-    height:220px;
-
-    object-fit:cover;
-
-    transition:.5s;
+cursor:pointer;
 
 }
 
 
 
-.card:hover img {
+body.dark .card{
 
-    transform:scale(1.1);
-
-}
-
-
-
-.card h3 {
-
-    margin-top:25px;
-
-    font-size:35px;
+background:#1c1c1e;
 
 }
 
 
 
-.card p {
+.card:hover{
 
-    padding:20px 25px 35px;
+transform:
 
-    color:#6e6e73;
+translateY(-20px)
+scale(1.03);
+
+
+box-shadow:
+
+0 35px 80px rgba(0,0,0,.2);
+
+}
+
+
+
+.card img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+
+
+.card:hover img{
+
+transform:scale(1.1);
+
+}
+
+
+
+.card h3{
+
+margin-top:25px;
+
+font-size:35px;
+
+}
+
+
+
+.card p{
+
+padding:20px 25px 35px;
+
+color:#6e6e73;
 
 }
 
@@ -588,93 +636,97 @@ body.dark .card {
 /* SERVICES */
 
 
-.services {
+.services{
 
-    padding:140px 40px;
+padding:140px 40px;
 
-    text-align:center;
-
-}
-
-
-
-.services h2 {
-
-    font-size:70px;
+text-align:center;
 
 }
 
 
 
-.service-boxes {
+.services h2{
 
-    display:flex;
+font-size:70px;
 
-    justify-content:center;
-
-    gap:30px;
-
-    flex-wrap:wrap;
-
-    margin-top:70px;
+letter-spacing:-3px;
 
 }
 
 
 
-.service {
+.service-boxes{
 
-    width:300px;
+display:flex;
 
-    padding:45px 30px;
+justify-content:center;
 
-    border-radius:35px;
+gap:30px;
 
-    background:#f5f5f7;
+flex-wrap:wrap;
 
-    transition:.4s;
-
-}
-
-
-
-body.dark .service {
-
-    background:#151515;
+margin-top:70px;
 
 }
 
 
 
-.service:hover {
+.service{
 
-    transform:translateY(-15px);
+width:300px;
 
-}
+padding:45px 30px;
 
+border-radius:35px;
 
+background:#f5f5f7;
 
-.service span {
-
-    font-size:50px;
-
-}
-
-
-
-.service h3 {
-
-    margin:20px;
-
-    font-size:30px;
+transition:.4s;
 
 }
 
 
 
-.service p {
+body.dark .service{
 
-    color:#6e6e73;
+background:#151515;
+
+}
+
+
+
+.service:hover{
+
+transform:
+
+translateY(-15px);
+
+}
+
+
+
+.service span{
+
+font-size:50px;
+
+}
+
+
+
+.service h3{
+
+margin:20px;
+
+font-size:30px;
+
+}
+
+
+
+.service p{
+
+color:#6e6e73;
 
 }
 
@@ -688,117 +740,122 @@ body.dark .service {
 /* ABOUT */
 
 
-.about {
+.about{
 
-    padding:140px 40px;
+padding:140px 40px;
 
-    text-align:center;
-
-}
-
-
-
-.about h2 {
-
-    font-size:70px;
+text-align:center;
 
 }
 
 
 
-.about p {
+.about h2{
 
-    max-width:750px;
-
-    margin:40px auto;
-
-    font-size:27px;
-
-    color:#6e6e73;
+font-size:70px;
 
 }
 
 
 
-.stats {
+.about p{
 
-    display:flex;
+max-width:750px;
 
-    justify-content:center;
+margin:40px auto;
 
-    gap:90px;
+font-size:27px;
 
-    flex-wrap:wrap;
-
-    margin-top:80px;
+color:#6e6e73;
 
 }
 
 
 
-.stats strong {
+.stats{
 
-    display:block;
+display:flex;
 
-    font-size:70px;
+justify-content:center;
 
-}
+gap:90px;
 
+flex-wrap:wrap;
 
-
-.stats span {
-
-    color:#6e6e73;
-
-}
-/* CONTACT */
-
-
-.contact {
-
-    padding:140px 40px;
-
-    background:#000;
-
-    color:white;
-
-    text-align:center;
+margin-top:80px;
 
 }
 
 
 
-.contact h2 {
+.stats strong{
 
-    font-size:70px;
+display:block;
 
-}
-
-
-
-.contact p {
-
-    margin-top:25px;
-
-    font-size:25px;
-
-    color:#aaa;
+font-size:70px;
 
 }
 
 
 
-form {
+.stats span{
 
-    max-width:550px;
+color:#6e6e73;
 
-    margin:60px auto;
+}
 
-    display:flex;
 
-    flex-direction:column;
 
-    gap:18px;
+
+
+/* CONTACT FORM STYLE */
+
+
+.contact{
+
+padding:140px 40px;
+
+background:#000;
+
+color:white;
+
+text-align:center;
+
+}
+
+
+
+.contact h2{
+
+font-size:70px;
+
+}
+
+
+
+.contact p{
+
+margin-top:25px;
+
+font-size:25px;
+
+color:#aaa;
+
+}
+
+
+
+form{
+
+max-width:550px;
+
+margin:60px auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
 
 }
 
@@ -806,273 +863,93 @@ form {
 
 input,
 
-textarea {
+textarea{
 
-    padding:20px;
+padding:20px;
 
-    border-radius:25px;
+border-radius:25px;
 
-    border:none;
+border:none;
 
-    font-size:17px;
+font-size:17px;
 
-}
-
-
-
-textarea {
-
-    height:160px;
+font-family:inherit;
 
 }
 
 
 
-form button {
+textarea{
 
-    padding:20px;
-
-    border:none;
-
-    border-radius:50px;
-
-    background:#0071e3;
-
-    color:white;
-
-    font-size:18px;
-
-    cursor:pointer;
-
-    transition:.3s;
+height:160px;
 
 }
 
 
 
-form button:hover {
+form button{
 
-    transform:scale(1.05);
+padding:20px;
 
-}
+border:none;
 
+border-radius:50px;
 
+background:#0071e3;
 
+color:white;
 
+font-size:18px;
 
+cursor:pointer;
 
-/* FOOTER */
-
-
-footer {
-
-    padding:40px;
-
-    text-align:center;
-
-    background:#111;
-
-    color:#777;
+transition:.3s;
 
 }
 
 
 
+form button:hover{
 
-
-
-
-/* SCROLL ANIMATION */
-
-
-.reveal {
-
-    opacity:0;
-
-    transform:translateY(70px);
-
-    transition:1s;
+transform:scale(1.05);
 
 }
 
 
 
-.reveal.active {
-
-    opacity:1;
-
-    transform:translateY(0);
-
-}
-
-
-
-
-
-
-/* MOBILE */
-
-
-@media(max-width:700px){
-
-
-nav {
-
-    width:95%;
-
-    padding:15px 20px;
-
-}
-
-
-
-.menu {
-
-    display:none;
-
-}
-
-
-
-.hero h1 {
-
-    letter-spacing:-4px;
-
-}
-
-
-
-.hero p {
-
-    font-size:20px;
-
-}
-
-
-
-.projects h2,
-
-.services h2,
-
-.about h2,
-
-.contact h2 {
-
-    font-size:45px;
-
-}
-
-
-
-.device {
-
-    width:260px;
-
-    height:500px;
-
-}
-
-
-
-.stats {
-
-    gap:40px;
-
-}
-
-
-
-}
-
-
-
-
-@keyframes floating {
-
-
-0% {
-
-transform:translateY(0);
-
-}
-
-
-50% {
-
-transform:translateY(-20px);
-
-}
-
-
-100% {
-
-transform:translateY(0);
-
-}
-
-
-}
-
-
-
-@keyframes fadeUp {
-
-
-from {
-
-opacity:0;
-
-transform:translateY(40px);
-
-}
-
-
-to {
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-
-}
 
 .success-message{
-    display:none;
-    margin-top:30px;
-    padding:24px;
-    border-radius:24px;
-    background:#0071e3;
-    color:white;
-    text-align:center;
-    font-size:20px;
-    line-height:1.6;
+
+display:none;
+
+margin-top:30px;
+
+padding:25px;
+
+border-radius:25px;
+
+background:#0071e3;
+
+color:white;
+
+font-size:20px;
+
+line-height:1.6;
+
 }
+
+
 
 .success-message.show{
-    display:block;
-    animation:fadeIn .5s ease;
+
+display:block;
+
+animation:fadeIn .5s ease;
+
 }
-
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}    
-
-</style>
+    </style>
 
 </head>
-
-
-
 
 
 <body>
@@ -1080,22 +957,15 @@ transform:translateY(0);
 
 <div class="loader">
 
-<div class="loader-logo">
+    <div class="loader-logo">
+        𝑺
+    </div>
 
-S
-
-</div>
-
-<p>
-
-Soncha Production
-
-</p>
+    <p>
+        Soncha Production
+    </p>
 
 </div>
-
-
-
 
 
 
@@ -1105,22 +975,36 @@ Soncha Production
 
 <div class="logo">
 
-Soncha<span>Production</span>
+    <div class="logo-s">
+        𝑺
+    </div>
+
+    Soncha<span>Production</span>
 
 </div>
+
 
 
 <div class="menu">
 
-<a href="#">Главная</a>
+<a href="#">
+Главная
+</a>
 
-<a href="#projects">Проекты</a>
+<a href="#projects">
+Проекты
+</a>
 
-<a href="#services">Услуги</a>
+<a href="#services">
+Услуги
+</a>
 
-<a href="#contact">Контакты</a>
+<a href="#contact">
+Контакты
+</a>
 
 </div>
+
 
 
 <button class="theme" onclick="theme()">
@@ -1138,8 +1022,7 @@ Soncha<span>Production</span>
 
 
 
-
-<section class="hero reveal">
+<section class="hero">
 
 
 <h1>
@@ -1154,6 +1037,7 @@ Soncha
 Создаю цифровые продукты, сочетая минимализм, дизайн и технологии.
 
 </p>
+
 
 
 <a class="main-btn" href="#contact">
@@ -1198,10 +1082,11 @@ Soncha
 <div class="cards">
 
 
-
 <div class="card">
 
+
 <img src="images/website.jpeg">
+
 
 <h3>
 
@@ -1209,11 +1094,13 @@ Website
 
 </h3>
 
+
 <p>
 
-Минималистичные сайты и цифровые решения.
+Современные сайты с минималистичным дизайном.
 
 </p>
+
 
 </div>
 
@@ -1223,7 +1110,9 @@ Website
 
 <div class="card">
 
+
 <img src="images/design.jpg">
+
 
 <h3>
 
@@ -1231,11 +1120,13 @@ Design
 
 </h3>
 
+
 <p>
 
-Современные интерфейсы и визуальный стиль.
+UI/UX решения и визуальные концепции.
 
 </p>
+
 
 </div>
 
@@ -1245,7 +1136,9 @@ Design
 
 <div class="card">
 
+
 <img src="images/future.jpeg">
+
 
 <h3>
 
@@ -1253,14 +1146,15 @@ Future
 
 </h3>
 
+
 <p>
 
-Идеи и технологии нового поколения.
+Цифровые идеи и технологии будущего.
 
 </p>
 
-</div>
 
+</div>
 
 
 </div>
@@ -1288,51 +1182,84 @@ Future
 <div class="service-boxes">
 
 
+
 <div class="service">
 
-<span>💻</span>
+<span>
+💻
+</span>
 
-<h3>Web</h3>
+
+<h3>
+
+Web
+
+</h3>
+
 
 <p>
 
-Современные сайты и цифровые продукты.
+Сайты и цифровые продукты.
 
 </p>
+
 
 </div>
 
 
 
+
+
 <div class="service">
 
-<span>🎨</span>
+<span>
+🎨
+</span>
 
-<h3>Design</h3>
+
+<h3>
+
+Design
+
+</h3>
+
 
 <p>
 
-UI/UX и визуальные решения.
+Интерфейсы и фирменный стиль.
 
 </p>
+
 
 </div>
 
 
 
+
+
 <div class="service">
 
-<span>🚀</span>
+<span>
+🚀
+</span>
 
-<h3>Future</h3>
+
+<h3>
+
+Future
+
+</h3>
+
 
 <p>
 
-Идеи, технологии и новые форматы.
+Новые идеи и современные технологии.
 
 </p>
 
+
 </div>
+
 
 
 </div>
@@ -1357,9 +1284,10 @@ UI/UX и визуальные решения.
 </h2>
 
 
+
 <p>
 
-Создаю цифровые продукты, сочетая минимализм, дизайн и технологии.
+Создаю цифровые продукты, где эстетика встречается с технологиями.
 
 </p>
 
@@ -1367,29 +1295,42 @@ UI/UX и визуальные решения.
 
 <div class="stats">
 
+
 <div>
 
-<strong>3+</strong>
+<strong>
+3+
+</strong>
 
-<span>Проекта</span>
+<span>
+Проекта
+</span>
 
 </div>
 
 
 <div>
 
-<strong>100%</strong>
+<strong>
+100%
+</strong>
 
-<span>Внимание к деталям</span>
+<span>
+Внимание к деталям
+</span>
 
 </div>
 
 
 <div>
 
-<strong>∞</strong>
+<strong>
+∞
+</strong>
 
-<span>Идей</span>
+<span>
+Идей
+</span>
 
 </div>
 
@@ -1398,6 +1339,7 @@ UI/UX и визуальные решения.
 
 
 </section>
+
 
 
 
@@ -1416,57 +1358,94 @@ UI/UX и визуальные решения.
 
 <p>
 
-Готова обсудить новый проект.
+Есть идея или проект? Расскажите о нём.
 
 </p>
 
+
+
+
+
 <form id="contactForm" action="https://formspree.io/f/xykqrneq" method="POST">
 
-    <input
-        type="text"
-        name="name"
-        placeholder="Ваше имя"
-        required>
 
-    <input
-        type="email"
-        name="email"
-        placeholder="Ваш Email"
-        required>
 
-    <textarea
-        name="message"
-        placeholder="Расскажите о вашем проекте..."
-        required></textarea>
+<input
 
-    <input
-        type="hidden"
-        name="_subject"
-        value="Новая заявка с сайта Soncha Production">
+type="text"
 
-    <input
-        type="hidden"
-        name="_format"
-        value="json">
+name="name"
 
-    <button type="submit">
-        Отправить →
-    </button>
+placeholder="Ваше имя"
+
+required>
+
+
+
+<input
+
+type="email"
+
+name="email"
+
+placeholder="Ваш Email"
+
+required>
+
+
+
+
+<textarea
+
+name="message"
+
+placeholder="Расскажите о вашем проекте..."
+
+required>
+
+</textarea>
+
+
+
+
+<input
+
+type="hidden"
+
+name="_subject"
+
+value="Новая заявка с сайта Soncha Production">
+
+
+
+
+
+<button type="submit">
+
+Отправить →
+
+</button>
+
+
 
 </form>
+
+
+
+
 <div id="successMessage" class="success-message">
-    ✓ Спасибо!<br>
-    Ваше сообщение отправлено.<br>
-    Я свяжусь с вами в ближайшее время.
+
+✓ Спасибо!<br>
+
+Ваше сообщение отправлено.<br>
+
+Я свяжусь с вами в ближайшее время.
+
 </div>
-    
+
+
+
 </section>
-
-
-
-
-
-
 <footer>
 
 © 2026 Soncha Production
@@ -1477,42 +1456,116 @@ UI/UX и визуальные решения.
 
 
 
-
-
 <script>
 
+
+// DARK MODE
 
 
 function theme(){
 
-document.body.classList.toggle("dark");
+    document.body.classList.toggle("dark");
 
 }
 
 
 
+
+
+
+// FORM WITHOUT FORMSPREE REDIRECT
+
+
+const form = document.getElementById("contactForm");
+
+
+form.addEventListener("submit", async (e)=>{
+
+
+    e.preventDefault();
+
+
+    const data = new FormData(form);
+
+
+    const response = await fetch(form.action, {
+
+        method:"POST",
+
+        body:data,
+
+        headers:{
+            "Accept":"application/json"
+        }
+
+    });
+
+
+
+    if(response.ok){
+
+
+        form.reset();
+
+
+        document
+        .getElementById("successMessage")
+        .classList.add("show");
+
+
+    } else {
+
+
+        alert(
+        "Ошибка отправки. Попробуйте ещё раз."
+        );
+
+
+    }
+
+
+
+});
+
+
+
+
+
+
+
+
+// SCROLL ANIMATION
 
 
 function reveal(){
 
 
-let items=document.querySelectorAll(".reveal");
+const elements =
+document.querySelectorAll(".reveal");
 
 
-items.forEach(item=>{
+
+elements.forEach((element)=>{
 
 
-let top=item.getBoundingClientRect().top;
+const position =
+element.getBoundingClientRect().top;
 
 
-if(top < window.innerHeight - 100){
 
-item.classList.add("active");
+if(position <
+window.innerHeight - 100){
+
+
+element.classList.add("active");
+
 
 }
 
 
+
 });
+
 
 
 }
@@ -1527,36 +1580,15 @@ reveal
 
 reveal();
 
-const form = document.getElementById("contactForm");
 
-form.addEventListener("submit", async (e) => {
 
-    e.preventDefault();
 
-    const data = new FormData(form);
 
-    const response = await fetch(form.action, {
-        method: "POST",
-        body: data,
-        headers: {
-            "Accept": "application/json"
-        }
-    });
 
-    if (response.ok) {
-        form.reset();
-        document
-            .getElementById("successMessage")
-            .classList.add("show");
-    } else {
-        alert("Не удалось отправить сообщение. Попробуйте ещё раз.");
-    }
-
-});
 
 </script>
 
 
 </body>
 
-</html>    
+</html>
