@@ -8,8 +8,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>
-Soncha Production — Digital Design
+Soncha Production
 </title>
+
+<link rel="icon" href="images/icon.svg">
+
+<link rel="apple-touch-icon" href="images/icon.svg">
 
 
 <style>
@@ -38,6 +42,8 @@ color:#111;
 
 transition:.4s;
 
+overflow-x:hidden;
+
 }
 
 
@@ -63,7 +69,6 @@ color:inherit;
 
 
 
-
 /* LOADER */
 
 
@@ -77,15 +82,15 @@ background:#fff;
 
 display:flex;
 
-flex-direction:column;
-
 justify-content:center;
 
 align-items:center;
 
+flex-direction:column;
+
 z-index:9999;
 
-animation:loaderHide 2.5s forwards;
+animation:hideLoader 2.5s forwards;
 
 }
 
@@ -101,11 +106,11 @@ background:#000;
 
 .loader-logo{
 
-width:100px;
+width:110px;
 
-height:100px;
+height:110px;
 
-border-radius:32px;
+border-radius:35px;
 
 background:
 
@@ -124,15 +129,20 @@ align-items:center;
 
 justify-content:center;
 
-font-size:65px;
+font-size:38px;
 
 font-weight:800;
 
+letter-spacing:-3px;
+
 box-shadow:
 
-0 20px 60px rgba(0,0,0,.35);
+0 25px 70px rgba(0,0,0,.35);
 
-animation:pulse 1.8s infinite;
+animation:
+
+logoAppear 1.2s ease,
+pulse 2s infinite;
 
 }
 
@@ -144,13 +154,15 @@ margin-top:25px;
 
 font-size:22px;
 
+font-weight:600;
+
 }
 
 
 
 
 
-@keyframes loaderHide{
+@keyframes hideLoader{
 
 0%{
 opacity:1;
@@ -172,18 +184,48 @@ visibility:hidden;
 
 
 
+@keyframes logoAppear{
+
+0%{
+
+opacity:0;
+
+transform:
+
+scale(.5)
+rotate(-10deg);
+
+filter:blur(10px);
+
+}
+
+
+100%{
+
+opacity:1;
+
+transform:
+
+scale(1)
+rotate(0);
+
+filter:blur(0);
+
+}
+
+}
+
+
+
 @keyframes pulse{
 
 50%{
 
-transform:scale(1.1);
+transform:scale(1.08);
 
 }
 
 }
-
-
-
 
 
 
@@ -262,13 +304,15 @@ color:#0071e3;
 
 
 
+
+
 .logo-s{
 
-width:40px;
+width:42px;
 
-height:40px;
+height:42px;
 
-border-radius:13px;
+border-radius:14px;
 
 background:
 
@@ -286,13 +330,13 @@ align-items:center;
 
 justify-content:center;
 
+font-size:17px;
+
+font-weight:800;
+
+letter-spacing:-1px;
+
 margin-right:10px;
-
-font-size:25px;
-
-box-shadow:
-
-0 10px 30px rgba(0,0,0,.25);
 
 }
 
@@ -329,12 +373,7 @@ color:#0071e3;
 
 
 
-
 .theme{
-
-border:none;
-
-background:#eee;
 
 width:42px;
 
@@ -342,7 +381,11 @@ height:42px;
 
 border-radius:50%;
 
+border:none;
+
 cursor:pointer;
+
+background:#eee;
 
 }
 
@@ -381,23 +424,19 @@ clamp(70px,12vw,150px);
 
 letter-spacing:-8px;
 
-animation:fadeUp 1s;
-
 }
 
 
 
 .hero p{
 
+font-size:28px;
+
 max-width:700px;
 
 margin-top:35px;
 
-font-size:28px;
-
 color:#6e6e73;
-
-animation:fadeUp 1.3s;
 
 }
 
@@ -415,8 +454,6 @@ background:#0071e3;
 
 color:white;
 
-font-size:18px;
-
 transition:.4s;
 
 }
@@ -431,7 +468,7 @@ translateY(-5px)
 scale(1.05);
 
 }
-    /* DEVICE */
+    /* FLOATING DEVICE */
 
 
 .device{
@@ -450,9 +487,9 @@ padding:12px;
 
 box-shadow:
 
-0 40px 100px rgba(0,0,0,.25);
+0 40px 100px rgba(0,0,0,.3);
 
-animation:floating 4s infinite;
+animation:floating 4s ease-in-out infinite;
 
 }
 
@@ -477,15 +514,41 @@ linear-gradient(
 
 display:flex;
 
-justify-content:center;
-
 align-items:center;
+
+justify-content:center;
 
 color:white;
 
-font-size:40px;
+font-size:50px;
 
-font-weight:700;
+font-weight:800;
+
+}
+
+
+
+@keyframes floating{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+
+50%{
+
+transform:translateY(-25px);
+
+}
+
+
+100%{
+
+transform:translateY(0);
+
+}
 
 }
 
@@ -518,13 +581,21 @@ background:#111;
 
 
 
-.projects h2{
+.projects h2,
+
+.services h2,
+
+.about h2,
+
+.contact h2{
 
 font-size:70px;
 
 letter-spacing:-4px;
 
 }
+
+
 
 
 
@@ -544,6 +615,8 @@ flex-wrap:wrap;
 
 
 
+
+
 .card{
 
 width:330px;
@@ -555,8 +628,6 @@ border-radius:35px;
 overflow:hidden;
 
 transition:.5s;
-
-cursor:pointer;
 
 }
 
@@ -577,7 +648,6 @@ transform:
 translateY(-20px)
 scale(1.03);
 
-
 box-shadow:
 
 0 35px 80px rgba(0,0,0,.2);
@@ -594,25 +664,15 @@ height:220px;
 
 object-fit:cover;
 
-transition:.5s;
-
-}
-
-
-
-.card:hover img{
-
-transform:scale(1.1);
-
 }
 
 
 
 .card h3{
 
-margin-top:25px;
-
 font-size:35px;
+
+margin-top:25px;
 
 }
 
@@ -632,7 +692,6 @@ color:#6e6e73;
 
 
 
-
 /* SERVICES */
 
 
@@ -641,16 +700,6 @@ color:#6e6e73;
 padding:140px 40px;
 
 text-align:center;
-
-}
-
-
-
-.services h2{
-
-font-size:70px;
-
-letter-spacing:-3px;
 
 }
 
@@ -716,9 +765,9 @@ font-size:50px;
 
 .service h3{
 
-margin:20px;
-
 font-size:30px;
+
+margin:20px;
 
 }
 
@@ -736,7 +785,6 @@ color:#6e6e73;
 
 
 
-
 /* ABOUT */
 
 
@@ -745,14 +793,6 @@ color:#6e6e73;
 padding:140px 40px;
 
 text-align:center;
-
-}
-
-
-
-.about h2{
-
-font-size:70px;
 
 }
 
@@ -803,12 +843,7 @@ font-size:70px;
 color:#6e6e73;
 
 }
-
-
-
-
-
-/* CONTACT FORM STYLE */
+    /* CONTACT */
 
 
 .contact{
@@ -820,14 +855,6 @@ background:#000;
 color:white;
 
 text-align:center;
-
-}
-
-
-
-.contact h2{
-
-font-size:70px;
 
 }
 
@@ -875,6 +902,8 @@ font-size:17px;
 
 font-family:inherit;
 
+outline:none;
+
 }
 
 
@@ -882,6 +911,8 @@ font-family:inherit;
 textarea{
 
 height:160px;
+
+resize:none;
 
 }
 
@@ -918,11 +949,14 @@ transform:scale(1.05);
 
 
 
+
 .success-message{
 
 display:none;
 
-margin-top:30px;
+max-width:550px;
+
+margin:30px auto;
 
 padding:25px;
 
@@ -947,516 +981,226 @@ display:block;
 animation:fadeIn .5s ease;
 
 }
-    </style>
 
-</head>
 
 
-<body>
+@keyframes fadeIn{
 
+from{
 
-<div class="loader">
+opacity:0;
 
-    <div class="loader-logo">
-        𝑺
-    </div>
+transform:translateY(20px);
 
-    <p>
-        Soncha Production
-    </p>
+}
 
-</div>
 
+to{
 
+opacity:1;
 
+transform:translateY(0);
 
-<nav>
+}
 
+}
 
-<div class="logo">
 
-    <div class="logo-s">
-        𝑺
-    </div>
 
-    Soncha<span>Production</span>
 
-</div>
 
 
 
-<div class="menu">
+/* FOOTER */
 
-<a href="#">
-Главная
-</a>
 
-<a href="#projects">
-Проекты
-</a>
+footer{
 
-<a href="#services">
-Услуги
-</a>
+padding:40px;
 
-<a href="#contact">
-Контакты
-</a>
+text-align:center;
 
-</div>
+color:#777;
 
+}
 
 
-<button class="theme" onclick="theme()">
 
-🌙
 
-</button>
 
 
-</nav>
 
+/* SCROLL EFFECT */
 
 
+.reveal{
 
+opacity:0;
 
+transform:translateY(50px);
 
+transition:.8s;
 
-<section class="hero">
+}
 
 
-<h1>
 
-Soncha
+.reveal.active{
 
-</h1>
+opacity:1;
 
+transform:translateY(0);
 
-<p>
+}
 
-Создаю цифровые продукты, сочетая минимализм, дизайн и технологии.
 
-</p>
 
 
 
-<a class="main-btn" href="#contact">
 
-Обсудить проект →
 
-</a>
+/* MOBILE */
 
 
+@media(max-width:768px){
 
-<div class="device">
 
-<div class="screen">
+.menu{
 
-Soncha
+display:none;
 
-</div>
+}
 
-</div>
 
 
+nav{
 
-</section>
+width:92%;
 
+}
 
 
 
+.hero h1{
 
+letter-spacing:-4px;
 
+}
 
-<section class="projects reveal" id="projects">
 
 
-<h2>
+.hero p{
 
-Проекты
+font-size:20px;
 
-</h2>
+}
 
 
 
-<div class="cards">
+.device{
 
+width:280px;
 
-<div class="card">
+height:540px;
 
+}
 
-<img src="images/website.jpeg">
 
 
-<h3>
+.projects h2,
 
-Website
+.services h2,
 
-</h3>
+.about h2,
 
+.contact h2{
 
-<p>
+font-size:45px;
 
-Современные сайты с минималистичным дизайном.
+}
 
-</p>
 
 
-</div>
+.stats{
 
+gap:40px;
 
-
-
-
-<div class="card">
-
-
-<img src="images/design.jpg">
-
-
-<h3>
-
-Design
-
-</h3>
-
-
-<p>
-
-UI/UX решения и визуальные концепции.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-
-<img src="images/future.jpeg">
-
-
-<h3>
-
-Future
-
-</h3>
-
-
-<p>
-
-Цифровые идеи и технологии будущего.
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<section class="services reveal" id="services">
-
-
-<h2>
-
-Что я создаю
-
-</h2>
-
-
-
-<div class="service-boxes">
-
-
-
-<div class="service">
-
-<span>
-💻
-</span>
-
-
-<h3>
-
-Web
-
-</h3>
-
-
-<p>
-
-Сайты и цифровые продукты.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="service">
-
-<span>
-🎨
-</span>
-
-
-<h3>
-
-Design
-
-</h3>
-
-
-<p>
-
-Интерфейсы и фирменный стиль.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="service">
-
-<span>
-🚀
-</span>
-
-
-<h3>
-
-Future
-
-</h3>
-
-
-<p>
-
-Новые идеи и современные технологии.
-
-</p>
-
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-
-<section class="about reveal">
-
-
-<h2>
-
-Обо мне
-
-</h2>
-
-
-
-<p>
-
-Создаю цифровые продукты, где эстетика встречается с технологиями.
-
-</p>
-
-
-
-<div class="stats">
-
-
-<div>
-
-<strong>
-3+
-</strong>
-
-<span>
-Проекта
-</span>
-
-</div>
-
-
-<div>
-
-<strong>
-100%
-</strong>
-
-<span>
-Внимание к деталям
-</span>
-
-</div>
-
-
-<div>
-
-<strong>
-∞
-</strong>
-
-<span>
-Идей
-</span>
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
+}
 
 <section class="contact reveal" id="contact">
 
-
 <h2>
-
 Связаться со мной
-
 </h2>
 
 
 <p>
-
 Есть идея или проект? Расскажите о нём.
-
 </p>
-
-
 
 
 
 <form id="contactForm" action="https://formspree.io/f/xykqrneq" method="POST">
 
 
-
 <input
-
 type="text"
-
 name="name"
-
 placeholder="Ваше имя"
-
 required>
-
 
 
 <input
-
 type="email"
-
 name="email"
-
 placeholder="Ваш Email"
-
 required>
-
 
 
 
 <textarea
-
 name="message"
-
 placeholder="Расскажите о вашем проекте..."
-
-required>
-
-</textarea>
-
+required></textarea>
 
 
 
 <input
-
 type="hidden"
-
 name="_subject"
-
 value="Новая заявка с сайта Soncha Production">
 
 
 
-
-
 <button type="submit">
-
 Отправить →
-
 </button>
-
 
 
 </form>
 
 
 
-
 <div id="successMessage" class="success-message">
 
 ✓ Спасибо!<br>
-
 Ваше сообщение отправлено.<br>
-
 Я свяжусь с вами в ближайшее время.
 
 </div>
 
 
-
 </section>
+
+
+
+
 <footer>
 
 © 2026 Soncha Production
 
 </footer>
-
-
-
-
-
-<script>
+    <script>
 
 
 // DARK MODE
@@ -1464,9 +1208,11 @@ value="Новая заявка с сайта Soncha Production">
 
 function theme(){
 
-    document.body.classList.toggle("dark");
+document.body.classList.toggle("dark");
 
 }
+
+
 
 
 
@@ -1478,50 +1224,73 @@ function theme(){
 
 const form = document.getElementById("contactForm");
 
+const successMessage = document.getElementById("successMessage");
+
+
 
 form.addEventListener("submit", async (e)=>{
 
 
-    e.preventDefault();
-
-
-    const data = new FormData(form);
-
-
-    const response = await fetch(form.action, {
-
-        method:"POST",
-
-        body:data,
-
-        headers:{
-            "Accept":"application/json"
-        }
-
-    });
+e.preventDefault();
 
 
 
-    if(response.ok){
+const response = await fetch(form.action, {
 
 
-        form.reset();
+method:"POST",
 
 
-        document
-        .getElementById("successMessage")
-        .classList.add("show");
+body:new FormData(form),
 
 
-    } else {
+headers:{
 
 
-        alert(
-        "Ошибка отправки. Попробуйте ещё раз."
-        );
+"Accept":"application/json"
 
 
-    }
+}
+
+
+});
+
+
+
+
+
+if(response.ok){
+
+
+form.reset();
+
+
+successMessage.classList.add("show");
+
+
+
+setTimeout(()=>{
+
+
+successMessage.classList.remove("show");
+
+
+},5000);
+
+
+
+}
+
+
+else{
+
+
+alert(
+"Ошибка отправки. Попробуйте ещё раз."
+);
+
+
+}
 
 
 
@@ -1540,21 +1309,18 @@ form.addEventListener("submit", async (e)=>{
 function reveal(){
 
 
-const elements =
-document.querySelectorAll(".reveal");
+const elements = document.querySelectorAll(".reveal");
 
 
 
 elements.forEach((element)=>{
 
 
-const position =
-element.getBoundingClientRect().top;
+const position = element.getBoundingClientRect().top;
 
 
 
-if(position <
-window.innerHeight - 100){
+if(position < window.innerHeight - 100){
 
 
 element.classList.add("active");
@@ -1567,7 +1333,6 @@ element.classList.add("active");
 });
 
 
-
 }
 
 
@@ -1576,6 +1341,7 @@ window.addEventListener(
 "scroll",
 reveal
 );
+
 
 
 reveal();
