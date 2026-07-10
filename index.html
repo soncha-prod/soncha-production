@@ -91,14 +91,6 @@ animation:loaderHide 2.5s forwards;
 
 
 
-body.dark .loader{
-
-background:#000;
-
-}
-
-
-
 .loader-logo{
 
 width:100px;
@@ -124,7 +116,7 @@ align-items:center;
 
 justify-content:center;
 
-font-size:65px;
+font-size:45px;
 
 font-weight:800;
 
@@ -186,9 +178,6 @@ transform:scale(1.1);
 
 
 
-
-
-
 /* NAV */
 
 
@@ -231,12 +220,9 @@ z-index:1000;
 body.dark nav{
 
 background:
-
 rgba(20,20,20,.7);
 
 }
-
-
 
 
 
@@ -264,11 +250,11 @@ color:#0071e3;
 
 .logo-s{
 
-width:40px;
+width:42px;
 
-height:40px;
+height:42px;
 
-border-radius:13px;
+border-radius:14px;
 
 background:
 
@@ -288,69 +274,18 @@ justify-content:center;
 
 margin-right:10px;
 
-font-size:25px;
+font-size:18px;
+
+font-weight:800;
+
+letter-spacing:-1px;
 
 box-shadow:
 
 0 10px 30px rgba(0,0,0,.25);
 
 }
-
-
-
-
-
-.menu{
-
-display:flex;
-
-gap:30px;
-
-}
-
-
-
-.menu a{
-
-color:#777;
-
-transition:.3s;
-
-}
-
-
-
-.menu a:hover{
-
-color:#0071e3;
-
-}
-
-
-
-
-
-.theme{
-
-border:none;
-
-background:#eee;
-
-width:42px;
-
-height:42px;
-
-border-radius:50%;
-
-cursor:pointer;
-
-}
-
-
-
-
-
-/* HERO */
+  /* HERO */
 
 
 .hero{
@@ -397,8 +332,6 @@ font-size:28px;
 
 color:#6e6e73;
 
-animation:fadeUp 1.3s;
-
 }
 
 
@@ -431,7 +364,13 @@ translateY(-5px)
 scale(1.05);
 
 }
-  /* DEVICE */
+
+
+
+
+
+
+/* PHONE */
 
 
 .device{
@@ -452,7 +391,7 @@ box-shadow:
 
 0 40px 100px rgba(0,0,0,.25);
 
-animation:floating 4s infinite;
+animation:floating 4s ease-in-out infinite;
 
 }
 
@@ -474,7 +413,6 @@ linear-gradient(
 #111
 );
 
-
 display:flex;
 
 justify-content:center;
@@ -486,6 +424,110 @@ color:white;
 font-size:40px;
 
 font-weight:700;
+
+}
+
+
+
+
+
+
+/* IPAD */
+
+
+.ipad{
+
+display:none;
+
+margin-top:90px;
+
+width:520px;
+
+height:360px;
+
+border-radius:40px;
+
+background:#111;
+
+padding:14px;
+
+box-shadow:
+
+0 40px 100px rgba(0,0,0,.25);
+
+animation:floating 4s ease-in-out infinite;
+
+}
+
+
+
+.ipad-screen{
+
+width:100%;
+
+height:100%;
+
+border-radius:30px;
+
+background:
+
+linear-gradient(
+135deg,
+#0071e3,
+#111
+);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:white;
+
+font-size:60px;
+
+font-weight:800;
+
+}
+
+
+
+@media(min-width:900px){
+
+.device{
+
+display:none;
+
+}
+
+
+.ipad{
+
+display:block;
+
+}
+
+}
+
+
+
+
+
+@keyframes floating{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+
+50%{
+
+transform:translateY(-25px);
+
+}
 
 }
 
@@ -525,7 +567,7 @@ font-size:70px;
 letter-spacing:-4px;
 
 }
-
+  /* CARDS */
 
 
 .cards{
@@ -808,7 +850,9 @@ color:#6e6e73;
 
 
 
-/* CONTACT FORM STYLE */
+
+
+/* CONTACT */
 
 
 .contact{
@@ -884,10 +928,7 @@ textarea{
 height:160px;
 
 }
-
-
-
-form button{
+  form button{
 
 padding:20px;
 
@@ -903,18 +944,7 @@ font-size:18px;
 
 cursor:pointer;
 
-transition:.3s;
-
 }
-
-
-
-form button:hover{
-
-transform:scale(1.05);
-
-}
-
 
 
 
@@ -934,8 +964,6 @@ color:white;
 
 font-size:20px;
 
-line-height:1.6;
-
 }
 
 
@@ -944,10 +972,32 @@ line-height:1.6;
 
 display:block;
 
-animation:fadeIn .5s ease;
+}
+
+
+
+@media(max-width:700px){
+
+.hero h1{
+
+font-size:80px;
 
 }
-  </style>
+
+
+.projects h2,
+.services h2,
+.about h2,
+.contact h2{
+
+font-size:50px;
+
+}
+
+}
+
+
+</style>
 
 </head>
 
@@ -957,50 +1007,64 @@ animation:fadeIn .5s ease;
 
 <div class="loader">
 
-    <div class="loader-logo">
-        𝑺
-    </div>
+<div class="loader-logo">
 
-    <p>
-        Soncha Production
-    </p>
+SP
 
 </div>
+
+
+<p>
+
+Soncha Production
+
+</p>
+
+</div>
+
 
 
 
 
 <nav>
 
-
 <div class="logo">
 
-    <div class="logo-s">
-        𝑺
-    </div>
+<div class="logo-s">
 
-    Soncha<span>Production</span>
+SP
 
 </div>
 
+Soncha<span>Production</span>
+
+</div>
 
 
 <div class="menu">
 
 <a href="#">
+
 Главная
+
 </a>
 
 <a href="#projects">
+
 Проекты
+
 </a>
 
 <a href="#services">
+
 Услуги
+
 </a>
 
 <a href="#contact">
+
 Контакты
+
 </a>
 
 </div>
@@ -1015,8 +1079,6 @@ animation:fadeIn .5s ease;
 
 
 </nav>
-
-
 
 
 
@@ -1060,9 +1122,19 @@ Soncha
 
 
 
+<div class="ipad">
+
+<div class="ipad-screen">
+
+SP
+
+</div>
+
+</div>
+
+
+
 </section>
-
-
 
 
 
@@ -1084,9 +1156,7 @@ Soncha
 
 <div class="card">
 
-
 <img src="images/website.jpeg">
-
 
 <h3>
 
@@ -1094,25 +1164,19 @@ Website
 
 </h3>
 
-
 <p>
 
 Современные сайты с минималистичным дизайном.
 
 </p>
 
-
 </div>
-
-
 
 
 
 <div class="card">
 
-
 <img src="images/design.jpg">
-
 
 <h3>
 
@@ -1120,25 +1184,19 @@ Design
 
 </h3>
 
-
 <p>
 
 UI/UX решения и визуальные концепции.
 
 </p>
 
-
 </div>
-
-
 
 
 
 <div class="card">
 
-
 <img src="images/future.jpeg">
-
 
 <h3>
 
@@ -1146,23 +1204,18 @@ Future
 
 </h3>
 
-
 <p>
 
 Цифровые идеи и технологии будущего.
 
 </p>
 
-
 </div>
 
 
 </div>
-
 
 </section>
-
-
 
 
 
@@ -1178,17 +1231,12 @@ Future
 </h2>
 
 
-
 <div class="service-boxes">
-
 
 
 <div class="service">
 
-<span>
-💻
-</span>
-
+<span>💻</span>
 
 <h3>
 
@@ -1196,26 +1244,19 @@ Web
 
 </h3>
 
-
 <p>
 
 Сайты и цифровые продукты.
 
 </p>
 
-
 </div>
-
-
 
 
 
 <div class="service">
 
-<span>
-🎨
-</span>
-
+<span>🎨</span>
 
 <h3>
 
@@ -1223,26 +1264,19 @@ Design
 
 </h3>
 
-
 <p>
 
 Интерфейсы и фирменный стиль.
 
 </p>
 
-
 </div>
-
-
 
 
 
 <div class="service">
 
-<span>
-🚀
-</span>
-
+<span>🚀</span>
 
 <h3>
 
@@ -1250,97 +1284,18 @@ Future
 
 </h3>
 
-
 <p>
 
 Новые идеи и современные технологии.
 
 </p>
 
-
 </div>
 
 
-
 </div>
-
 
 </section>
-
-
-
-
-
-
-
-
-<section class="about reveal">
-
-
-<h2>
-
-Обо мне
-
-</h2>
-
-
-
-<p>
-
-Создаю цифровые продукты, где эстетика встречается с технологиями.
-
-</p>
-
-
-
-<div class="stats">
-
-
-<div>
-
-<strong>
-3+
-</strong>
-
-<span>
-Проекта
-</span>
-
-</div>
-
-
-<div>
-
-<strong>
-100%
-</strong>
-
-<span>
-Внимание к деталям
-</span>
-
-</div>
-
-
-<div>
-
-<strong>
-∞
-</strong>
-
-<span>
-Идей
-</span>
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
 
 
 
@@ -1364,59 +1319,34 @@ Future
 
 
 
-
-
 <form id="contactForm" action="https://formspree.io/f/xykqrneq" method="POST">
 
 
-
-<input
-
+<input 
 type="text"
-
 name="name"
-
 placeholder="Ваше имя"
-
 required>
-
 
 
 <input
-
 type="email"
-
 name="email"
-
 placeholder="Ваш Email"
-
 required>
-
-
 
 
 <textarea
-
 name="message"
-
 placeholder="Расскажите о вашем проекте..."
-
-required>
-
-</textarea>
-
+required></textarea>
 
 
 
 <input
-
 type="hidden"
-
 name="_subject"
-
 value="Новая заявка с сайта Soncha Production">
-
-
 
 
 
@@ -1427,9 +1357,7 @@ value="Новая заявка с сайта Soncha Production">
 </button>
 
 
-
 </form>
-
 
 
 
@@ -1437,15 +1365,17 @@ value="Новая заявка с сайта Soncha Production">
 
 ✓ Спасибо!<br>
 
-Ваше сообщение отправлено.<br>
-
-Я свяжусь с вами в ближайшее время.
+Ваше сообщение отправлено.
 
 </div>
 
 
-
 </section>
+
+
+
+
+
 <footer>
 
 © 2026 Soncha Production
@@ -1459,130 +1389,55 @@ value="Новая заявка с сайта Soncha Production">
 <script>
 
 
-// DARK MODE
-
-
 function theme(){
 
-    document.body.classList.toggle("dark");
+document.body.classList.toggle("dark");
 
 }
 
-
-
-
-
-
-// FORM WITHOUT FORMSPREE REDIRECT
 
 
 const form = document.getElementById("contactForm");
 
 
-form.addEventListener("submit", async (e)=>{
+form.addEventListener("submit", async(e)=>{
 
 
-    e.preventDefault();
+e.preventDefault();
 
 
-    const data = new FormData(form);
+const data = new FormData(form);
 
 
-    const response = await fetch(form.action, {
+const response = await fetch(form.action,{
 
-        method:"POST",
+method:"POST",
 
-        body:data,
+body:data,
 
-        headers:{
-            "Accept":"application/json"
-        }
+headers:{
 
-    });
+"Accept":"application/json"
 
-
-
-    if(response.ok){
-
-
-        form.reset();
-
-
-        document
-        .getElementById("successMessage")
-        .classList.add("show");
-
-
-    } else {
-
-
-        alert(
-        "Ошибка отправки. Попробуйте ещё раз."
-        );
-
-
-    }
-
-
+}
 
 });
 
 
 
+if(response.ok){
 
+form.reset();
 
-
-
-
-// SCROLL ANIMATION
-
-
-function reveal(){
-
-
-const elements =
-document.querySelectorAll(".reveal");
-
-
-
-elements.forEach((element)=>{
-
-
-const position =
-element.getBoundingClientRect().top;
-
-
-
-if(position <
-window.innerHeight - 100){
-
-
-element.classList.add("active");
+document
+.getElementById("successMessage")
+.classList.add("show");
 
 
 }
-
 
 
 });
-
-
-
-}
-
-
-
-window.addEventListener(
-"scroll",
-reveal
-);
-
-
-reveal();
-
-
-
-
 
 
 
