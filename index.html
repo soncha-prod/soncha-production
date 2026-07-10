@@ -38,6 +38,8 @@ color:#111;
 
 transition:.4s;
 
+overflow-x:hidden;
+
 }
 
 
@@ -59,8 +61,6 @@ text-decoration:none;
 color:inherit;
 
 }
-
-
 
 
 
@@ -91,6 +91,14 @@ animation:loaderHide 2.5s forwards;
 
 
 
+body.dark .loader{
+
+background:#000;
+
+}
+
+
+
 .loader-logo{
 
 width:100px;
@@ -107,7 +115,6 @@ linear-gradient(
 #333
 );
 
-
 color:white;
 
 display:flex;
@@ -116,7 +123,7 @@ align-items:center;
 
 justify-content:center;
 
-font-size:45px;
+font-size:40px;
 
 font-weight:800;
 
@@ -137,8 +144,6 @@ margin-top:25px;
 font-size:22px;
 
 }
-
-
 
 
 
@@ -163,7 +168,6 @@ visibility:hidden;
 }
 
 
-
 @keyframes pulse{
 
 50%{
@@ -173,8 +177,6 @@ transform:scale(1.1);
 }
 
 }
-
-
 
 
 
@@ -220,6 +222,7 @@ z-index:1000;
 body.dark nav{
 
 background:
+
 rgba(20,20,20,.7);
 
 }
@@ -302,7 +305,7 @@ align-items:center;
 
 text-align:center;
 
-padding:120px 30px;
+padding:130px 30px;
 
 }
 
@@ -324,7 +327,7 @@ animation:fadeUp 1s;
 
 .hero p{
 
-max-width:700px;
+max-width:750px;
 
 margin-top:35px;
 
@@ -350,7 +353,7 @@ color:white;
 
 font-size:18px;
 
-transition:.4s;
+transition:.3s;
 
 }
 
@@ -358,13 +361,9 @@ transition:.4s;
 
 .main-btn:hover{
 
-transform:
-
-translateY(-5px)
-scale(1.05);
+transform:scale(1.05) translateY(-5px);
 
 }
-
 
 
 
@@ -377,9 +376,9 @@ scale(1.05);
 
 margin-top:90px;
 
-width:320px;
+width:300px;
 
-height:620px;
+height:580px;
 
 border-radius:45px;
 
@@ -441,9 +440,9 @@ display:none;
 
 margin-top:90px;
 
-width:520px;
+width:560px;
 
-height:360px;
+height:390px;
 
 border-radius:40px;
 
@@ -462,8 +461,6 @@ animation:floating 4s ease-in-out infinite;
 
 
 .ipad-screen{
-
-width:100%;
 
 height:100%;
 
@@ -509,7 +506,6 @@ display:block;
 }
 
 }
-
 
 
 
@@ -567,7 +563,7 @@ font-size:70px;
 letter-spacing:-4px;
 
 }
-  /* CARDS */
+
 
 
 .cards{
@@ -619,7 +615,6 @@ transform:
 translateY(-20px)
 scale(1.03);
 
-
 box-shadow:
 
 0 35px 80px rgba(0,0,0,.2);
@@ -636,46 +631,8 @@ height:220px;
 
 object-fit:cover;
 
-transition:.5s;
-
 }
-
-
-
-.card:hover img{
-
-transform:scale(1.1);
-
-}
-
-
-
-.card h3{
-
-margin-top:25px;
-
-font-size:35px;
-
-}
-
-
-
-.card p{
-
-padding:20px 25px 35px;
-
-color:#6e6e73;
-
-}
-
-
-
-
-
-
-
-
-/* SERVICES */
+  /* SERVICES */
 
 
 .services{
@@ -740,9 +697,7 @@ background:#151515;
 
 .service:hover{
 
-transform:
-
-translateY(-15px);
+transform:translateY(-15px);
 
 }
 
@@ -771,9 +726,6 @@ font-size:30px;
 color:#6e6e73;
 
 }
-
-
-
 
 
 
@@ -842,10 +794,11 @@ font-size:70px;
 
 .stats span{
 
+font-size:20px;
+
 color:#6e6e73;
 
 }
-
 
 
 
@@ -928,7 +881,10 @@ textarea{
 height:160px;
 
 }
-  form button{
+
+
+
+form button{
 
 padding:20px;
 
@@ -943,6 +899,16 @@ color:white;
 font-size:18px;
 
 cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+
+form button:hover{
+
+transform:scale(1.05);
 
 }
 
@@ -976,13 +942,94 @@ display:block;
 
 
 
+
+
+/* MOBILE */
+
+
 @media(max-width:700px){
+
+
+nav{
+
+width:94%;
+
+padding:12px 16px;
+
+}
+
+
+
+.menu{
+
+display:none;
+
+}
+
+
+
+.logo{
+
+font-size:18px;
+
+}
+
+
+
+.logo-s{
+
+width:36px;
+
+height:36px;
+
+}
+
+
+
+.hero{
+
+padding:100px 20px;
+
+}
+
+
 
 .hero h1{
 
-font-size:80px;
+font-size:70px;
+
+letter-spacing:-4px;
 
 }
+
+
+
+.hero p{
+
+font-size:18px;
+
+}
+
+
+
+.device{
+
+display:block;
+
+width:240px;
+
+height:460px;
+
+}
+
+
+
+.ipad{
+
+display:none;
+
+}
+
 
 
 .projects h2,
@@ -994,10 +1041,17 @@ font-size:50px;
 
 }
 
+
+.stats{
+
+gap:50px;
+
 }
 
 
-</style>
+
+}
+  </style>
 
 </head>
 
@@ -1028,6 +1082,7 @@ Soncha Production
 
 <nav>
 
+
 <div class="logo">
 
 <div class="logo-s">
@@ -1036,12 +1091,16 @@ SP
 
 </div>
 
+
 Soncha<span>Production</span>
+
 
 </div>
 
 
+
 <div class="menu">
+
 
 <a href="#">
 
@@ -1049,11 +1108,13 @@ Soncha<span>Production</span>
 
 </a>
 
+
 <a href="#projects">
 
 Проекты
 
 </a>
+
 
 <a href="#services">
 
@@ -1061,11 +1122,13 @@ Soncha<span>Production</span>
 
 </a>
 
+
 <a href="#contact">
 
 Контакты
 
 </a>
+
 
 </div>
 
@@ -1084,6 +1147,7 @@ Soncha<span>Production</span>
 
 
 
+
 <section class="hero">
 
 
@@ -1094,6 +1158,7 @@ Soncha
 </h1>
 
 
+
 <p>
 
 Создаю цифровые продукты, сочетая минимализм, дизайн и технологии.
@@ -1102,11 +1167,13 @@ Soncha
 
 
 
+
 <a class="main-btn" href="#contact">
 
 Обсудить проект →
 
 </a>
+
 
 
 
@@ -1122,11 +1189,13 @@ Soncha
 
 
 
+
+
 <div class="ipad">
 
 <div class="ipad-screen">
 
-SP
+Soncha
 
 </div>
 
@@ -1135,6 +1204,8 @@ SP
 
 
 </section>
+
+
 
 
 
@@ -1158,11 +1229,13 @@ SP
 
 <img src="images/website.jpeg">
 
+
 <h3>
 
 Website
 
 </h3>
+
 
 <p>
 
@@ -1178,11 +1251,13 @@ Website
 
 <img src="images/design.jpg">
 
+
 <h3>
 
 Design
 
 </h3>
+
 
 <p>
 
@@ -1194,15 +1269,18 @@ UI/UX решения и визуальные концепции.
 
 
 
+
 <div class="card">
 
 <img src="images/future.jpeg">
+
 
 <h3>
 
 Future
 
 </h3>
+
 
 <p>
 
@@ -1215,7 +1293,10 @@ Future
 
 </div>
 
+
 </section>
+
+
 
 
 
@@ -1231,6 +1312,7 @@ Future
 </h2>
 
 
+
 <div class="service-boxes">
 
 
@@ -1244,6 +1326,7 @@ Web
 
 </h3>
 
+
 <p>
 
 Сайты и цифровые продукты.
@@ -1254,15 +1337,18 @@ Web
 
 
 
+
 <div class="service">
 
 <span>🎨</span>
+
 
 <h3>
 
 Design
 
 </h3>
+
 
 <p>
 
@@ -1274,9 +1360,11 @@ Design
 
 
 
+
 <div class="service">
 
 <span>🚀</span>
+
 
 <h3>
 
@@ -1284,18 +1372,110 @@ Future
 
 </h3>
 
+
 <p>
 
-Новые идеи и современные технологии.
+Новые идеи и технологии.
 
 </p>
 
 </div>
 
 
+
 </div>
 
+
 </section>
+
+
+
+
+
+
+<section class="about reveal">
+
+
+<h2>
+
+Обо мне
+
+</h2>
+
+
+
+<p>
+
+Создаю цифровые продукты, где эстетика встречается с технологиями.
+
+</p>
+
+
+
+
+<div class="stats">
+
+
+<div>
+
+<strong>
+
+3+
+
+</strong>
+
+<span>
+
+Проекта
+
+</span>
+
+</div>
+
+
+
+<div>
+
+<strong>
+
+100%
+
+</strong>
+
+<span>
+
+Внимание к деталям
+
+</span>
+
+</div>
+
+
+
+
+<div>
+
+<strong>
+
+∞
+
+</strong>
+
+<span>
+
+Идей
+
+</span>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
 
 
 
@@ -1311,6 +1491,7 @@ Future
 </h2>
 
 
+
 <p>
 
 Есть идея или проект? Расскажите о нём.
@@ -1319,34 +1500,56 @@ Future
 
 
 
+
 <form id="contactForm" action="https://formspree.io/f/xykqrneq" method="POST">
 
 
-<input 
+
+<input
+
 type="text"
+
 name="name"
+
 placeholder="Ваше имя"
+
 required>
+
 
 
 <input
+
 type="email"
+
 name="email"
+
 placeholder="Ваш Email"
+
 required>
 
 
+
+
 <textarea
+
 name="message"
+
 placeholder="Расскажите о вашем проекте..."
+
 required></textarea>
 
 
 
+
 <input
+
 type="hidden"
+
 name="_subject"
+
 value="Новая заявка с сайта Soncha Production">
+
+
 
 
 
@@ -1357,20 +1560,27 @@ value="Новая заявка с сайта Soncha Production">
 </button>
 
 
+
 </form>
+
+
 
 
 
 <div id="successMessage" class="success-message">
 
+
 ✓ Спасибо!<br>
 
 Ваше сообщение отправлено.
 
+
 </div>
 
 
+
 </section>
+
 
 
 
@@ -1381,6 +1591,7 @@ value="Новая заявка с сайта Soncha Production">
 © 2026 Soncha Production
 
 </footer>
+
 
 
 
@@ -1397,6 +1608,8 @@ document.body.classList.toggle("dark");
 
 
 
+
+
 const form = document.getElementById("contactForm");
 
 
@@ -1406,7 +1619,9 @@ form.addEventListener("submit", async(e)=>{
 e.preventDefault();
 
 
+
 const data = new FormData(form);
+
 
 
 const response = await fetch(form.action,{
@@ -1427,7 +1642,10 @@ headers:{
 
 if(response.ok){
 
+
 form.reset();
+
+
 
 document
 .getElementById("successMessage")
@@ -1437,11 +1655,13 @@ document
 }
 
 
+
 });
 
 
 
 </script>
+
 
 
 </body>
