@@ -1392,29 +1392,40 @@ UI/UX и визуальные решения.
 
 </p>
 
+<form action="https://formspree.io/f/xykqtneq" method="POST">
 
+    <input
+        type="text"
+        name="name"
+        placeholder="Ваше имя"
+        required>
 
-<form>
+    <input
+        type="email"
+        name="email"
+        placeholder="Ваш Email"
+        required>
 
+    <textarea
+        name="message"
+        placeholder="Расскажите о вашем проекте..."
+        required></textarea>
 
-<input placeholder="Имя">
+    <input
+        type="hidden"
+        name="_subject"
+        value="Новая заявка с сайта Soncha Production">
 
+    <input
+        type="hidden"
+        name="_format"
+        value="json">
 
-<input placeholder="Email">
-
-
-<textarea placeholder="Сообщение"></textarea>
-
-
-<button>
-
-Отправить
-
-</button>
-
+    <button type="submit">
+        Отправить →
+    </button>
 
 </form>
-
 
 </section>
 
