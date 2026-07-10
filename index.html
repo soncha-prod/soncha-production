@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="ru">
 
 <head>
 
@@ -8,90 +7,216 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Soncha Production</title>
+<title>
+Soncha Production — Digital Design
+</title>
 
 
 <style>
 
 
 * {
+    margin:0;
+    padding:0;
     box-sizing:border-box;
-}
-
-
-html {
-
     scroll-behavior:smooth;
-
 }
+
 
 
 body {
 
-    margin:0;
-
     font-family:
     -apple-system,
     BlinkMacSystemFont,
-    "Segoe UI",
+    "SF Pro Display",
+    Arial,
     sans-serif;
 
     background:#fff;
 
-    color:#1d1d1f;
+    color:#111;
 
-    transition:.5s;
+    transition:.4s;
 
 }
 
 
-
-/* DARK */
 
 body.dark {
 
     background:#000;
 
-    color:white;
+    color:#fff;
 
 }
 
 
 
-/* NAV */
+a {
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+
+
+
+/* LOADER */
+
+
+.loader {
+
+    position:fixed;
+
+    inset:0;
+
+    background:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+    animation:loaderHide 2.5s forwards;
+
+}
+
+
+
+body.dark .loader {
+
+    background:#000;
+
+}
+
+
+
+.loader-logo {
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:28px;
+
+    background:#0071e3;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:55px;
+
+    font-weight:700;
+
+    animation:pulse 1.5s infinite;
+
+}
+
+
+
+.loader p {
+
+    margin-top:25px;
+
+    font-size:22px;
+
+}
+
+
+
+
+
+@keyframes loaderHide {
+
+    0% {
+
+        opacity:1;
+
+    }
+
+
+    80% {
+
+        opacity:1;
+
+    }
+
+
+    100% {
+
+        opacity:0;
+
+        visibility:hidden;
+
+    }
+
+}
+
+
+
+@keyframes pulse {
+
+
+50% {
+
+    transform:scale(1.1);
+
+}
+
+
+}
+
+
+
+
+
+
+/* NAVIGATION */
 
 
 nav {
 
     position:fixed;
 
-    top:0;
+    top:20px;
 
-    left:0;
+    left:50%;
 
-    width:100%;
+    transform:translateX(-50%);
 
-    height:65px;
+    width:90%;
 
+    max-width:1100px;
 
-    display:flex;
+    padding:18px 30px;
 
-    align-items:center;
+    border-radius:50px;
 
-    justify-content:space-between;
-
-
-    padding:0 50px;
-
-
-    background:
-    rgba(255,255,255,.75);
-
+    background:rgba(255,255,255,.7);
 
     backdrop-filter:blur(20px);
 
+    display:flex;
 
-    z-index:100;
+    justify-content:space-between;
+
+    align-items:center;
+
+    z-index:1000;
 
 }
 
@@ -99,8 +224,7 @@ nav {
 
 body.dark nav {
 
-    background:
-    rgba(0,0,0,.7);
+    background:rgba(20,20,20,.7);
 
 }
 
@@ -108,7 +232,7 @@ body.dark nav {
 
 .logo {
 
-    font-size:22px;
+    font-size:24px;
 
     font-weight:700;
 
@@ -124,11 +248,13 @@ body.dark nav {
 
 
 
+
+
 .menu {
 
     display:flex;
 
-    gap:25px;
+    gap:30px;
 
 }
 
@@ -136,11 +262,7 @@ body.dark nav {
 
 .menu a {
 
-    color:inherit;
-
-    text-decoration:none;
-
-    font-size:15px;
+    color:#666;
 
     transition:.3s;
 
@@ -156,21 +278,24 @@ body.dark nav {
 
 
 
+
+
 .theme {
 
-    border:0;
+    border:none;
 
-    background:#0071e3;
+    background:#eee;
 
-    color:white;
+    width:42px;
 
-    padding:10px 16px;
+    height:42px;
 
-    border-radius:30px;
+    border-radius:50%;
 
     cursor:pointer;
 
 }
+
 
 
 
@@ -180,9 +305,7 @@ body.dark nav {
 
 .hero {
 
-
     min-height:100vh;
-
 
     display:flex;
 
@@ -192,52 +315,9 @@ body.dark nav {
 
     align-items:center;
 
-
     text-align:center;
 
-
-    position:relative;
-
-
-    overflow:hidden;
-
-
-}
-
-
-
-.hero::before {
-
-
-    content:"";
-
-
-    position:absolute;
-
-
-    width:600px;
-
-
-    height:600px;
-
-
-    background:
-
-    radial-gradient(
-    circle,
-    #6366f1,
-    transparent 70%
-    );
-
-
-    opacity:.25;
-
-
-    filter:blur(40px);
-
-
-    z-index:-1;
-
+    padding:120px 30px;
 
 }
 
@@ -245,86 +325,49 @@ body.dark nav {
 
 .hero h1 {
 
+    font-size:
 
-    font-size:100px;
+    clamp(70px,12vw,150px);
 
-
-    letter-spacing:-6px;
-
-
-    margin:0;
-
+    letter-spacing:-8px;
 
     animation:fadeUp 1s;
 
-
 }
-
-
-
-
-.hero h1 span {
-
-
-    color:#0071e3;
-
-
-}
-
 
 
 
 .hero p {
 
+    max-width:700px;
 
-    font-size:30px;
+    margin-top:35px;
 
+    font-size:28px;
 
     color:#6e6e73;
 
-
-    max-width:700px;
-
-
-    margin:30px;
-
-
     animation:fadeUp 1.3s;
 
-
 }
-
-
-
-body.dark .hero p {
-
-    color:#aaa;
-
-}
-
 
 
 
 .main-btn {
 
+    margin-top:45px;
+
+    padding:18px 40px;
+
+    border-radius:50px;
 
     background:#0071e3;
 
-
     color:white;
 
+    font-size:18px;
 
-    text-decoration:none;
-
-
-    padding:17px 40px;
-
-
-    border-radius:40px;
-
-
-    transition:.3s;
-
+    transition:.4s;
 
 }
 
@@ -332,113 +375,81 @@ body.dark .hero p {
 
 .main-btn:hover {
 
-
-    transform:scale(1.08);
-
+    transform:translateY(-5px) scale(1.05);
 
 }
-
-
-
-
-
-/* DEVICE */
+    /* DEVICE PREVIEW */
 
 
 .device {
 
+    margin-top:90px;
 
-    margin-top:80px;
+    width:320px;
 
+    height:620px;
 
-    width:450px;
-
-
-    height:280px;
-
+    border-radius:45px;
 
     background:#111;
 
-
-    border-radius:35px;
-
-
-    display:flex;
-
-
-    justify-content:center;
-
-
-    align-items:center;
-
+    padding:12px;
 
     box-shadow:
 
-    0 40px 90px rgba(0,0,0,.35);
+    0 40px 100px rgba(0,0,0,.25);
 
-
-
-    animation:
-
-    floating 5s infinite;
-
+    animation:floating 4s infinite;
 
 }
-
 
 
 
 .screen {
 
+    width:100%;
 
-    width:90%;
+    height:100%;
 
-
-    height:85%;
-
-
-    border-radius:25px;
-
-
-    display:flex;
-
-
-    justify-content:center;
-
-
-    align-items:center;
-
-
-    color:white;
-
-
-    font-size:45px;
-
+    border-radius:35px;
 
     background:
 
     linear-gradient(
     135deg,
-    #7c3aed,
-    #06b6d4
+    #0071e3,
+    #111
     );
 
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:40px;
+
+    font-weight:700;
 
 }
+
+
+
+
+
+
 /* PROJECTS */
 
 
 .projects {
 
-
-    padding:140px 50px;
-
+    padding:140px 40px;
 
     background:#f5f5f7;
 
-
     text-align:center;
-
 
 }
 
@@ -454,58 +465,41 @@ body.dark .projects {
 
 .projects h2 {
 
-
     font-size:70px;
-
 
     letter-spacing:-4px;
 
-
 }
-
 
 
 
 .cards {
 
+    margin-top:80px;
 
     display:flex;
 
-
     justify-content:center;
-
 
     gap:35px;
 
-
     flex-wrap:wrap;
-
-
-    margin-top:70px;
-
 
 }
 
 
 
-
 .card {
 
-
-    width:320px;
-
+    width:330px;
 
     background:white;
 
-
-    border-radius:30px;
-
+    border-radius:35px;
 
     overflow:hidden;
 
-
     transition:.5s;
-
 
 }
 
@@ -513,17 +507,13 @@ body.dark .projects {
 
 body.dark .card {
 
-
-    background:#181818;
-
+    background:#1c1c1e;
 
 }
 
 
 
-
 .card:hover {
-
 
     transform:
 
@@ -532,69 +522,156 @@ body.dark .card {
     scale(1.03);
 
 
-
     box-shadow:
 
-    0 40px 80px rgba(0,0,0,.2);
-
+    0 35px 80px rgba(0,0,0,.2);
 
 }
-
 
 
 
 .card img {
 
-
     width:100%;
 
-
-    height:190px;
-
+    height:220px;
 
     object-fit:cover;
 
-
     transition:.5s;
 
-
 }
-
 
 
 
 .card:hover img {
 
-
     transform:scale(1.1);
 
-
 }
-
 
 
 
 .card h3 {
 
+    margin-top:25px;
 
-    font-size:32px;
-
+    font-size:35px;
 
 }
-
 
 
 
 .card p {
 
-
-    padding:0 25px 30px;
-
+    padding:20px 25px 35px;
 
     color:#6e6e73;
 
+}
+
+
+
+
+
+
+
+
+/* SERVICES */
+
+
+.services {
+
+    padding:140px 40px;
+
+    text-align:center;
 
 }
+
+
+
+.services h2 {
+
+    font-size:70px;
+
+}
+
+
+
+.service-boxes {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+    margin-top:70px;
+
+}
+
+
+
+.service {
+
+    width:300px;
+
+    padding:45px 30px;
+
+    border-radius:35px;
+
+    background:#f5f5f7;
+
+    transition:.4s;
+
+}
+
+
+
+body.dark .service {
+
+    background:#151515;
+
+}
+
+
+
+.service:hover {
+
+    transform:translateY(-15px);
+
+}
+
+
+
+.service span {
+
+    font-size:50px;
+
+}
+
+
+
+.service h3 {
+
+    margin:20px;
+
+    font-size:30px;
+
+}
+
+
+
+.service p {
+
+    color:#6e6e73;
+
+}
+
+
+
 
 
 
@@ -605,12 +682,9 @@ body.dark .card {
 
 .about {
 
-
-    padding:150px 40px;
-
+    padding:140px 40px;
 
     text-align:center;
-
 
 }
 
@@ -618,9 +692,7 @@ body.dark .card {
 
 .about h2 {
 
-
     font-size:70px;
-
 
 }
 
@@ -628,41 +700,29 @@ body.dark .card {
 
 .about p {
 
-
-    font-size:28px;
-
-
     max-width:750px;
-
 
     margin:40px auto;
 
+    font-size:27px;
 
     color:#6e6e73;
-
 
 }
 
 
 
-
 .stats {
-
 
     display:flex;
 
-
     justify-content:center;
-
 
     gap:90px;
 
-
     flex-wrap:wrap;
 
-
-    margin-top:90px;
-
+    margin-top:80px;
 
 }
 
@@ -670,12 +730,9 @@ body.dark .card {
 
 .stats strong {
 
-
-    font-size:70px;
-
-
     display:block;
 
+    font-size:70px;
 
 }
 
@@ -683,37 +740,21 @@ body.dark .card {
 
 .stats span {
 
-
     color:#6e6e73;
 
-
-    font-size:20px;
-
-
 }
-
-
-
-
-
-
 /* CONTACT */
 
 
 .contact {
 
-
-    padding:130px 40px;
-
+    padding:140px 40px;
 
     background:#000;
 
-
     color:white;
 
-
     text-align:center;
-
 
 }
 
@@ -721,46 +762,35 @@ body.dark .card {
 
 .contact h2 {
 
-
-    font-size:65px;
-
+    font-size:70px;
 
 }
-
 
 
 
 .contact p {
 
+    margin-top:25px;
+
+    font-size:25px;
 
     color:#aaa;
-
-
-    font-size:24px;
-
 
 }
 
 
 
-
 form {
 
+    max-width:550px;
 
-    max-width:500px;
-
-
-    margin:50px auto;
-
+    margin:60px auto;
 
     display:flex;
 
-
     flex-direction:column;
 
-
-    gap:15px;
-
+    gap:18px;
 
 }
 
@@ -770,18 +800,13 @@ input,
 
 textarea {
 
+    padding:20px;
 
-    padding:18px;
-
-
-    border-radius:20px;
-
+    border-radius:25px;
 
     border:none;
 
-
-    font-size:16px;
-
+    font-size:17px;
 
 }
 
@@ -789,9 +814,7 @@ textarea {
 
 textarea {
 
-
-    height:140px;
-
+    height:160px;
 
 }
 
@@ -799,37 +822,33 @@ textarea {
 
 form button {
 
-
-    padding:18px;
-
-
-    border-radius:40px;
-
+    padding:20px;
 
     border:none;
 
+    border-radius:50px;
 
-    cursor:pointer;
+    background:#0071e3;
 
+    color:white;
 
     font-size:18px;
 
+    cursor:pointer;
 
     transition:.3s;
 
-
 }
-
 
 
 
 form button:hover {
 
-
     transform:scale(1.05);
 
-
 }
+
+
 
 
 
@@ -839,20 +858,16 @@ form button:hover {
 
 footer {
 
-
     padding:40px;
-
-
-    background:#111;
-
-
-    color:#aaa;
-
 
     text-align:center;
 
+    background:#111;
+
+    color:#777;
 
 }
+
 
 
 
@@ -864,15 +879,11 @@ footer {
 
 .reveal {
 
-
     opacity:0;
-
 
     transform:translateY(70px);
 
-
     transition:1s;
-
 
 }
 
@@ -880,12 +891,9 @@ footer {
 
 .reveal.active {
 
-
     opacity:1;
 
-
     transform:translateY(0);
-
 
 }
 
@@ -894,8 +902,81 @@ footer {
 
 
 
+/* MOBILE */
 
-/* ANIMATIONS */
+
+@media(max-width:700px){
+
+
+nav {
+
+    width:95%;
+
+    padding:15px 20px;
+
+}
+
+
+
+.menu {
+
+    display:none;
+
+}
+
+
+
+.hero h1 {
+
+    letter-spacing:-4px;
+
+}
+
+
+
+.hero p {
+
+    font-size:20px;
+
+}
+
+
+
+.projects h2,
+
+.services h2,
+
+.about h2,
+
+.contact h2 {
+
+    font-size:45px;
+
+}
+
+
+
+.device {
+
+    width:260px;
+
+    height:500px;
+
+}
+
+
+
+.stats {
+
+    gap:40px;
+
+}
+
+
+
+}
+
+
 
 
 @keyframes floating {
@@ -926,42 +1007,60 @@ transform:translateY(0);
 
 
 
-
 @keyframes fadeUp {
 
 
 from {
 
-
 opacity:0;
-
 
 transform:translateY(40px);
 
-
 }
-
 
 
 to {
 
-
 opacity:1;
-
 
 transform:translateY(0);
 
-
 }
 
 
 }
+
+
 </style>
 
 </head>
 
 
+
+
+
 <body>
+
+
+<div class="loader">
+
+<div class="loader-logo">
+
+S
+
+</div>
+
+<p>
+
+Soncha Production
+
+</p>
+
+</div>
+
+
+
+
 
 
 
@@ -969,35 +1068,29 @@ transform:translateY(0);
 
 
 <div class="logo">
-Soncha<span>Production</span>
-</div>
 
+Soncha<span>Production</span>
+
+</div>
 
 
 <div class="menu">
 
-<a href="#">
-Главная
-</a>
+<a href="#">Главная</a>
 
-<a href="#projects">
-Проекты
-</a>
+<a href="#projects">Проекты</a>
 
-<a href="#about">
-Обо мне
-</a>
+<a href="#services">Услуги</a>
 
-<a href="#contact">
-Контакты
-</a>
+<a href="#contact">Контакты</a>
 
 </div>
 
 
-
 <button class="theme" onclick="theme()">
+
 🌙
+
 </button>
 
 
@@ -1008,42 +1101,46 @@ Soncha<span>Production</span>
 
 
 
+
+
 <section class="hero reveal">
 
 
 <h1>
+
 Soncha
+
 </h1>
 
 
-
 <p>
+
 Создаю цифровые продукты, сочетая минимализм, дизайн и технологии.
+
 </p>
 
 
-
 <a class="main-btn" href="#contact">
-Связаться со мной
-</a>
 
+Обсудить проект →
+
+</a>
 
 
 
 <div class="device">
 
-
 <div class="screen">
-Soncha
-</div>
 
+Soncha
+
+</div>
 
 </div>
 
 
 
 </section>
-
 
 
 
@@ -1055,9 +1152,10 @@ Soncha
 
 
 <h2>
-Проекты
-</h2>
 
+Проекты
+
+</h2>
 
 
 
@@ -1065,21 +1163,21 @@ Soncha
 
 
 
-<div class="card reveal">
-
+<div class="card">
 
 <img src="images/website.jpeg">
 
-
 <h3>
+
 Website
+
 </h3>
 
-
 <p>
-Минималистичные сайты и цифровые решения.
-</p>
 
+Минималистичные сайты и цифровые решения.
+
+</p>
 
 </div>
 
@@ -1087,22 +1185,21 @@ Website
 
 
 
-
-<div class="card reveal">
-
+<div class="card">
 
 <img src="images/design.jpg">
 
-
 <h3>
+
 Design
+
 </h3>
 
-
 <p>
-Современные интерфейсы и визуальный стиль.
-</p>
 
+Современные интерфейсы и визуальный стиль.
+
+</p>
 
 </div>
 
@@ -1110,25 +1207,23 @@ Design
 
 
 
-
-<div class="card reveal">
-
+<div class="card">
 
 <img src="images/future.jpeg">
 
-
 <h3>
+
 Future
+
 </h3>
 
-
 <p>
+
 Идеи и технологии нового поколения.
+
 </p>
 
-
 </div>
-
 
 
 
@@ -1143,12 +1238,86 @@ Future
 
 
 
-
-<section class="about reveal" id="about">
+<section class="services reveal" id="services">
 
 
 <h2>
+
+Что я создаю
+
+</h2>
+
+
+
+<div class="service-boxes">
+
+
+<div class="service">
+
+<span>💻</span>
+
+<h3>Web</h3>
+
+<p>
+
+Современные сайты и цифровые продукты.
+
+</p>
+
+</div>
+
+
+
+<div class="service">
+
+<span>🎨</span>
+
+<h3>Design</h3>
+
+<p>
+
+UI/UX и визуальные решения.
+
+</p>
+
+</div>
+
+
+
+<div class="service">
+
+<span>🚀</span>
+
+<h3>Future</h3>
+
+<p>
+
+Идеи, технологии и новые форматы.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="about reveal">
+
+
+<h2>
+
 Обо мне
+
 </h2>
 
 
@@ -1160,63 +1329,39 @@ Future
 
 
 
-
-
 <div class="stats">
 
-
 <div>
 
-<strong>
-3+
-</strong>
+<strong>3+</strong>
 
-<span>
-Проекта
-</span>
+<span>Проекта</span>
 
 </div>
-
-
 
 
 <div>
 
-<strong>
-100%
-</strong>
+<strong>100%</strong>
 
-<span>
-Внимание к деталям
-</span>
+<span>Внимание к деталям</span>
 
 </div>
-
-
 
 
 <div>
 
-<strong>
-∞
-</strong>
+<strong>∞</strong>
 
-<span>
-Идей
-</span>
+<span>Идей</span>
 
 </div>
 
 
-
 </div>
-
 
 
 </section>
-
-
-
 
 
 
@@ -1227,16 +1372,17 @@ Future
 
 
 <h2>
+
 Связаться со мной
+
 </h2>
 
 
-
 <p>
+
 Готова обсудить новый проект.
+
 </p>
-
-
 
 
 
@@ -1252,19 +1398,17 @@ Future
 <textarea placeholder="Сообщение"></textarea>
 
 
-
 <button>
-Отправить
-</button>
 
+Отправить
+
+</button>
 
 
 </form>
 
 
-
 </section>
-
 
 
 
@@ -1283,11 +1427,8 @@ Future
 
 
 
-
 <script>
 
-
-// DARK MODE
 
 
 function theme(){
@@ -1299,34 +1440,24 @@ document.body.classList.toggle("dark");
 
 
 
-// SCROLL ANIMATION
-
 
 function reveal(){
 
 
-let items =
-document.querySelectorAll(".reveal");
+let items=document.querySelectorAll(".reveal");
 
 
-
-items.forEach(item => {
-
-
-let position =
-item.getBoundingClientRect().top;
+items.forEach(item=>{
 
 
+let top=item.getBoundingClientRect().top;
 
-if(position <
-window.innerHeight - 100){
 
+if(top < window.innerHeight - 100){
 
 item.classList.add("active");
 
-
 }
-
 
 
 });
@@ -1342,7 +1473,6 @@ reveal
 );
 
 
-
 reveal();
 
 
@@ -1350,7 +1480,6 @@ reveal();
 </script>
 
 
-
 </body>
 
-</html>
+</html>    
