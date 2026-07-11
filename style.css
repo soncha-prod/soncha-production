@@ -2436,3 +2436,63 @@ nav {
 
 
 }
+/* ==========================
+   MOBILE HERO FIX
+========================== */
+
+
+@media (max-width:700px){
+
+
+.hero h1 {
+
+    font-size:42px;
+
+    line-height:1.1;
+
+    letter-spacing:-1px;
+
+    word-break:normal;
+
+}
+
+
+
+.hero p {
+
+    font-size:18px;
+
+    line-height:1.5;
+
+    padding:0 20px;
+
+}
+
+
+
+.hero-content {
+
+    padding:0 20px;
+
+    width:100%;
+
+}
+
+
+
+.loader-logo {
+
+    font-size:60px;
+
+}
+
+
+
+.nav-logo {
+
+    font-size:24px;
+
+}
+
+
+}
