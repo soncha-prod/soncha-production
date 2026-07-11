@@ -8,66 +8,67 @@
 
 <title>Soncha Production</title>
 
-
 <style>
 
-/* =========================
-   RESET
-========================= */
-
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 
 body{
-    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Arial,sans-serif;
-    background:#fff;
-    color:#111;
-    transition:.4s;
-    overflow-x:hidden;
+
+font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Arial,sans-serif;
+background:#fff;
+color:#111;
+transition:.4s;
+overflow-x:hidden;
+
 }
 
 
 body.dark{
-    background:#000;
-    color:#fff;
+
+background:#000;
+color:#fff;
+
 }
 
 
 a{
-    text-decoration:none;
-    color:inherit;
+
+text-decoration:none;
+color:inherit;
+
 }
 
 
 
 
-/* =========================
-   LOADER
-========================= */
+/* LOADER */
 
 
 .loader{
 
 position:fixed;
 inset:0;
-background:#fff;
+background:white;
 display:flex;
 flex-direction:column;
-align-items:center;
 justify-content:center;
+align-items:center;
 z-index:9999;
-animation:hideLoader 2s forwards;
+animation:loaderHide 2.5s forwards;
 
 }
 
 
 body.dark .loader{
+
 background:#000;
+
 }
 
 
@@ -76,10 +77,10 @@ background:#000;
 width:110px;
 height:110px;
 border-radius:35px;
+background:linear-gradient(135deg,#0071e3,#8b5cff);
 display:flex;
 align-items:center;
 justify-content:center;
-background:linear-gradient(135deg,#0071e3,#8b5cff);
 color:white;
 font-size:45px;
 font-weight:800;
@@ -97,7 +98,7 @@ font-size:22px;
 
 
 
-@keyframes hideLoader{
+@keyframes loaderHide{
 
 to{
 opacity:0;
@@ -118,9 +119,8 @@ transform:scale(1.1);
 
 
 
-/* =========================
-   NAV
-========================= */
+
+/* NAV */
 
 
 nav{
@@ -196,7 +196,7 @@ color:#0071e3;
 
 width:45px;
 height:45px;
-border:none;
+border:0;
 border-radius:50%;
 cursor:pointer;
 font-size:20px;
@@ -206,9 +206,7 @@ font-size:20px;
 
 
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 
 .hero{
@@ -227,7 +225,7 @@ overflow:hidden;
 
 
 
-.hero::before{
+.hero:before{
 
 content:"";
 position:absolute;
@@ -257,9 +255,9 @@ z-index:1;
 .hero p{
 
 max-width:750px;
-margin-top:30px;
 font-size:28px;
 line-height:1.5;
+margin-top:30px;
 color:#6e6e73;
 z-index:1;
 
@@ -269,33 +267,33 @@ z-index:1;
 
 .button{
 
-display:inline-block;
 margin-top:40px;
 padding:18px 45px;
 border-radius:50px;
 background:#0071e3;
 color:white;
 font-size:18px;
-transition:.3s;
 border:none;
 cursor:pointer;
+transition:.4s;
+display:inline-block;
 
 }
+
 
 
 .button:hover{
 
-transform:translateY(-5px);
-box-shadow:0 20px 50px rgba(0,113,227,.35);
+transform:translateY(-6px);
+box-shadow:0 20px 50px rgba(0,113,227,.4);
 
 }
 
 
 
 
-/* =========================
-   DEVICES
-========================= */
+
+/* DEVICES */
 
 
 .devices{
@@ -317,8 +315,8 @@ z-index:1;
 
 background:#111;
 padding:12px;
+box-shadow:0 40px 80px rgba(0,0,0,.25);
 animation:float 5s infinite;
-box-shadow:0 30px 80px rgba(0,0,0,.25);
 
 }
 
@@ -377,9 +375,9 @@ transform:translateY(-20px);
 }
 
 
-/* =========================
-   SECTIONS
-========================= */
+
+
+/* SECTIONS */
 
 
 section{
@@ -397,59 +395,56 @@ font-size:65px;
 margin-bottom:60px;
 
 }
-
-   </style>
-
-</head>
+   </head>
 
 
 <body>
 
 
-<!-- LOADER -->
-
 <div class="loader">
 
-    <div class="loader-logo">
-        SP
-    </div>
+<div class="loader-logo">
+SP
+</div>
 
-    <p>
-        Soncha Production
-    </p>
+<p>
+Soncha Production
+</p>
 
 </div>
 
 
 
 
-<!-- NAV -->
 
 <nav>
 
-    <div class="logo">
-        Soncha<span>Production</span>
-    </div>
+
+<div class="logo">
+Soncha<span>Production</span>
+</div>
 
 
-    <div class="menu">
 
-        <a href="#home">Главная</a>
+<div class="menu">
 
-        <a href="#projects">Проекты</a>
+<a href="#home">Главная</a>
 
-        <a href="#services">Услуги</a>
+<a href="#projects">Проекты</a>
 
-        <a href="#about">Обо мне</a>
+<a href="#services">Услуги</a>
 
-        <a href="#contact">Контакты</a>
+<a href="#about">Обо мне</a>
 
-    </div>
+<a href="#contact">Контакты</a>
+
+</div>
 
 
-    <button class="theme" id="themeBtn">
-        🌙
-    </button>
+
+<button class="theme" id="themeBtn">
+🌙
+</button>
 
 
 </nav>
@@ -458,7 +453,6 @@ margin-bottom:60px;
 
 
 
-<!-- HERO -->
 
 
 <section class="hero" id="home">
@@ -467,6 +461,7 @@ margin-bottom:60px;
 <h1>
 Soncha
 </h1>
+
 
 
 <p>
@@ -479,6 +474,7 @@ Soncha
 <a href="#contact" class="button">
 Обсудить проект →
 </a>
+
 
 
 
@@ -518,9 +514,6 @@ Production
 
 
 
-<!-- PROJECTS -->
-
-
 <section id="projects" class="reveal">
 
 
@@ -533,11 +526,11 @@ Production
 <div class="cards">
 
 
+
 <div class="card">
 
-<div class="project-image">
-Website
-</div>
+
+<img src="images/website.jpeg" alt="Website">
 
 
 <h3>
@@ -560,9 +553,7 @@ Website
 <div class="card">
 
 
-<div class="project-image">
-Design
-</div>
+<img src="images/design.jpg" alt="Design">
 
 
 <h3>
@@ -571,8 +562,8 @@ Design
 
 
 <p>
-UI/UX дизайн, визуальный стиль
-и продуманный пользовательский опыт.
+UI/UX дизайн и визуальные концепции
+для цифровых продуктов.
 </p>
 
 
@@ -585,9 +576,7 @@ UI/UX дизайн, визуальный стиль
 <div class="card">
 
 
-<div class="project-image">
-Future
-</div>
+<img src="images/future.jpeg" alt="Future">
 
 
 <h3>
@@ -596,8 +585,8 @@ Future
 
 
 <p>
-Эксперименты с технологиями
-и цифровыми решениями.
+Новые технологии и идеи
+для проектов будущего.
 </p>
 
 
@@ -606,6 +595,7 @@ Future
 
 
 </div>
+
 
 
 </section>
@@ -617,7 +607,6 @@ Future
 
 
 
-<!-- SERVICES -->
 
 
 <section id="services" class="reveal">
@@ -626,6 +615,7 @@ Future
 <h2 class="title">
 Услуги
 </h2>
+
 
 
 
@@ -639,16 +629,12 @@ Future
 💻 Web
 </h3>
 
-
 <p>
-Создание сайтов:
-лендинги, портфолио,
-сайты компаний.
+Создание сайтов,
+лендингов и портфолио.
 </p>
 
-
 </div>
-
 
 
 
@@ -659,12 +645,10 @@ Future
 🎨 UI/UX
 </h3>
 
-
 <p>
 Минималистичный дизайн
-в стиле Apple.
+и удобные интерфейсы.
 </p>
-
 
 </div>
 
@@ -678,12 +662,10 @@ Future
 🚀 Animation
 </h3>
 
-
 <p>
 Плавные эффекты,
-переходы и интерактив.
+анимации и интерактив.
 </p>
-
 
 </div>
 
@@ -700,9 +682,6 @@ Future
 
 
 
-
-
-<!-- ABOUT -->
 
 
 <section id="about" class="reveal">
@@ -718,6 +697,7 @@ Future
 <div class="about-box">
 
 
+
 <h3>
 Soncha Production
 </h3>
@@ -725,13 +705,10 @@ Soncha Production
 
 
 <p>
-
-Создаю цифровые продукты
+Создаю современные цифровые продукты
 с вниманием к деталям.
-Моя цель — делать сайты,
-которые выглядят современно
-и удобно работают.
-
+Минимализм, скорость и стиль —
+основа каждого проекта.
 </p>
 
 
@@ -752,11 +729,144 @@ CSS3
 
 <span>
 JavaScript
-</
+</span>
 
+
+<span>
+UI/UX
+</span>
+
+
+<span>
+Responsive
+</span>
+
+
+<span>
+Animation
+</span>
+
+
+</div>
+
+
+
+
+
+
+<div class="stats">
+
+
+
+<div>
+
+<b>
+3+
+</b>
+
+<span>
+Проекта
+</span>
+
+</div>
+
+
+
+
+<div>
+
+<b>
+100%
+</b>
+
+<span>
+Уникальный дизайн
+</span>
+
+</div>
+
+
+
+
+<div>
+
+<b>
+24/7
+</b>
+
+<span>
+Поддержка
+</span>
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section id="contact" class="reveal">
+
+
+<h2 class="title">
+Контакты
+</h2>
+
+
+
+<form>
+
+
+<input placeholder="Ваше имя">
+
+
+<input placeholder="Email">
+
+
+<textarea placeholder="Расскажите о проекте"></textarea>
+
+
+<button class="button" type="button">
+Отправить →
+</button>
+
+
+
+</form>
+
+
+
+</section>
+
+
+
+
+
+
+<footer>
+
+© 2026 Soncha Production
+
+</footer>
    /* =========================
-   CARDS
+   PROJECTS + CARDS
 ========================= */
+
 
 .cards{
 
@@ -768,18 +878,21 @@ flex-wrap:wrap;
 }
 
 
+
 .card{
 
 width:330px;
-padding:35px;
+background:white;
 border-radius:35px;
-background:#fff;
+overflow:hidden;
+transition:.5s ease;
 box-shadow:0 20px 60px rgba(0,0,0,.08);
-transition:.5s;
+
 opacity:0;
-transform:translateY(50px);
+transform:translateY(60px);
 
 }
+
 
 
 body.dark .card{
@@ -787,6 +900,7 @@ body.dark .card{
 background:#1c1c1e;
 
 }
+
 
 
 .card.show{
@@ -797,27 +911,53 @@ transform:translateY(0);
 }
 
 
+
 .card:hover{
 
 transform:translateY(-15px) scale(1.03);
+box-shadow:0 30px 80px rgba(0,113,227,.25);
 
 }
+
+
+
+.card img{
+
+width:100%;
+height:220px;
+object-fit:cover;
+display:block;
+transition:.6s;
+
+}
+
+
+
+.card:hover img{
+
+transform:scale(1.1);
+
+}
+
 
 
 .card h3{
 
 font-size:32px;
-margin-bottom:20px;
+margin:25px;
 
 }
+
 
 
 .card p{
 
+margin:0 25px 30px;
 color:#6e6e73;
 line-height:1.6;
 
 }
+
 
 
 body.dark .card p{
@@ -828,27 +968,12 @@ color:#aaa;
 
 
 
-/* PROJECT IMAGE */
-
-.project-image{
-
-height:200px;
-border-radius:25px;
-background:linear-gradient(135deg,#0071e3,#8b5cff);
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-font-size:35px;
-font-weight:800;
-margin-bottom:25px;
-
-}
 
 
+/* =========================
+   ABOUT
+========================= */
 
-
-/* ABOUT */
 
 .about-box{
 
@@ -861,6 +986,7 @@ backdrop-filter:blur(25px);
 box-shadow:0 30px 80px rgba(0,0,0,.1);
 
 }
+
 
 
 body.dark .about-box{
@@ -879,6 +1005,7 @@ margin-bottom:25px;
 }
 
 
+
 .about-box p{
 
 font-size:22px;
@@ -889,12 +1016,22 @@ color:#6e6e73;
 
 
 
+body.dark .about-box p{
+
+color:#aaa;
+
+}
+
+
+
+
+
 .skills{
 
 display:flex;
-gap:15px;
 flex-wrap:wrap;
-margin-top:35px;
+gap:15px;
+margin-top:40px;
 
 }
 
@@ -903,8 +1040,8 @@ margin-top:35px;
 .skills span{
 
 padding:12px 22px;
-background:#0071e3;
 border-radius:50px;
+background:#0071e3;
 color:white;
 transition:.3s;
 
@@ -917,6 +1054,7 @@ transition:.3s;
 transform:translateY(-5px);
 
 }
+
 
 
 
@@ -962,13 +1100,16 @@ color:#777;
 
 
 
-/* FORM */
+
+/* =========================
+   FORM
+========================= */
 
 
 form{
 
 max-width:500px;
-margin:auto;
+margin:50px auto;
 display:flex;
 flex-direction:column;
 gap:20px;
@@ -980,11 +1121,23 @@ gap:20px;
 input,
 textarea{
 
+width:100%;
 padding:20px;
 border-radius:25px;
 border:1px solid #ddd;
 font-size:16px;
 font-family:inherit;
+
+}
+
+
+
+body.dark input,
+body.dark textarea{
+
+background:#1c1c1e;
+color:white;
+border-color:#333;
 
 }
 
@@ -1000,7 +1153,10 @@ resize:none;
 
 
 
-/* REVEAL */
+/* =========================
+   ANIMATION
+========================= */
+
 
 .reveal{
 
@@ -1009,6 +1165,7 @@ transform:translateY(60px);
 transition:1s;
 
 }
+
 
 
 .reveal.active{
@@ -1021,21 +1178,10 @@ transform:translateY(0);
 
 
 
-/* FOOTER */
+/* =========================
+   MOBILE
+========================= */
 
-footer{
-
-text-align:center;
-padding:40px;
-background:#111;
-color:#777;
-
-}
-
-
-
-
-/* MOBILE */
 
 @media(max-width:768px){
 
@@ -1061,18 +1207,18 @@ font-size:20px;
 }
 
 
-.tablet{
-
-width:330px;
-height:230px;
-
-}
-
-
 .phone{
 
 width:220px;
 height:440px;
+
+}
+
+
+.tablet{
+
+width:330px;
+height:230px;
 
 }
 
@@ -1087,6 +1233,14 @@ font-size:42px;
 section{
 
 padding:80px 20px;
+
+}
+
+
+.card{
+
+width:100%;
+max-width:350px;
 
 }
 
@@ -1119,12 +1273,4 @@ font-size:42px;
 }
 
 
-.card{
-
-width:100%;
-
 }
-
-
-}
-    
