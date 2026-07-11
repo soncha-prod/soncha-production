@@ -8,6 +8,7 @@
 
 <title>Soncha Production</title>
 
+
 <style>
 
 *{
@@ -17,6 +18,7 @@ box-sizing:border-box;
 scroll-behavior:smooth;
 }
 
+
 body{
 font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Arial,sans-serif;
 background:#fff;
@@ -25,15 +27,18 @@ transition:.4s;
 overflow-x:hidden;
 }
 
+
 body.dark{
 background:#000;
 color:#fff;
 }
 
+
 a{
 text-decoration:none;
 color:inherit;
 }
+
 
 
 /* LOADER */
@@ -44,34 +49,33 @@ inset:0;
 background:#fff;
 display:flex;
 flex-direction:column;
-justify-content:center;
 align-items:center;
+justify-content:center;
 z-index:9999;
 animation:hide 2.5s forwards;
 }
 
-body.dark .loader{
-background:#000;
-}
 
 .loader-logo{
 width:110px;
 height:110px;
 border-radius:35px;
 background:linear-gradient(135deg,#0071e3,#8b5cff);
-color:#fff;
 display:flex;
 align-items:center;
 justify-content:center;
+color:#fff;
 font-size:45px;
 font-weight:800;
 animation:pulse 1.5s infinite;
 }
 
+
 .loader p{
 margin-top:25px;
 font-size:22px;
 }
+
 
 @keyframes hide{
 to{
@@ -79,6 +83,7 @@ opacity:0;
 visibility:hidden;
 }
 }
+
 
 @keyframes pulse{
 50%{
@@ -107,32 +112,39 @@ align-items:center;
 z-index:1000;
 }
 
+
 body.dark nav{
 background:rgba(30,30,30,.7);
 }
+
 
 .logo{
 font-size:24px;
 font-weight:700;
 }
 
+
 .logo span{
 color:#0071e3;
 }
+
 
 .menu{
 display:flex;
 gap:30px;
 }
 
+
 .menu a{
 color:#666;
 transition:.3s;
 }
 
+
 .menu a:hover{
 color:#0071e3;
 }
+
 
 .theme{
 width:45px;
@@ -142,6 +154,7 @@ border-radius:50%;
 cursor:pointer;
 font-size:20px;
 }
+
 
 
 
@@ -159,33 +172,21 @@ position:relative;
 overflow:hidden;
 }
 
-.hero:before{
-content:"";
-position:absolute;
-width:700px;
-height:700px;
-background:#0071e3;
-filter:blur(180px);
-opacity:.18;
-top:-200px;
-left:-200px;
-}
 
 .hero h1{
 font-size:clamp(80px,12vw,160px);
 letter-spacing:-10px;
 font-weight:800;
-z-index:1;
 }
+
 
 .hero p{
 max-width:750px;
 margin-top:30px;
 font-size:28px;
 color:#6e6e73;
-line-height:1.5;
-z-index:1;
 }
+
 
 .button{
 margin-top:40px;
@@ -193,20 +194,22 @@ padding:18px 45px;
 border-radius:50px;
 background:#0071e3;
 color:white;
-font-size:18px;
 border:none;
 cursor:pointer;
-transition:.3s;
+font-size:18px;
 display:inline-block;
 }
 
+
 .button:hover{
-transform:translateY(-5px);
+transform:scale(1.05);
 }
+
 
 
 
 /* DEVICES */
+
 
 .devices{
 margin-top:90px;
@@ -215,16 +218,16 @@ gap:40px;
 justify-content:center;
 align-items:center;
 flex-wrap:wrap;
-z-index:2;
 }
+
 
 .phone,
 .tablet{
 background:#111;
 padding:12px;
-box-shadow:0 30px 80px rgba(0,0,0,.25);
 animation:float 5s infinite;
 }
+
 
 .phone{
 width:280px;
@@ -232,11 +235,13 @@ height:560px;
 border-radius:45px;
 }
 
+
 .tablet{
 width:520px;
 height:360px;
 border-radius:40px;
 }
+
 
 .screen{
 height:100%;
@@ -245,14 +250,11 @@ background:linear-gradient(135deg,#0071e3,#8b5cff);
 display:flex;
 align-items:center;
 justify-content:center;
-color:#fff;
+color:white;
 font-size:40px;
 font-weight:800;
 }
 
-.tablet .screen{
-font-size:60px;
-}
 
 @keyframes float{
 50%{
@@ -268,10 +270,226 @@ section{
 padding:120px 40px;
 }
 
+
 .title{
 text-align:center;
 font-size:65px;
 margin-bottom:60px;
+}
+
+
+/* CARDS */
+
+.cards{
+display:flex;
+justify-content:center;
+gap:35px;
+flex-wrap:wrap;
+}
+
+
+.card{
+width:330px;
+background:#fff;
+border-radius:35px;
+overflow:hidden;
+box-shadow:0 20px 60px rgba(0,0,0,.08);
+transition:.5s;
+opacity:0;
+transform:translateY(50px);
+}
+
+
+body.dark .card{
+background:#1c1c1e;
+}
+
+
+.card.show{
+opacity:1;
+transform:translateY(0);
+}
+
+
+.card:hover{
+transform:translateY(-15px) scale(1.03);
+}
+
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+display:block;
+transition:.5s;
+}
+
+
+.card:hover img{
+transform:scale(1.08);
+}
+
+
+.card h3{
+font-size:32px;
+margin:25px;
+}
+
+
+.card p{
+margin:0 25px 30px;
+color:#6e6e73;
+line-height:1.5;
+}
+
+
+
+.about-box{
+max-width:1000px;
+margin:auto;
+padding:60px;
+border-radius:45px;
+background:#f5f5f7;
+}
+
+
+body.dark .about-box{
+background:#111;
+}
+
+
+.about-box h3{
+font-size:45px;
+margin-bottom:25px;
+}
+
+
+.about-box p{
+font-size:22px;
+line-height:1.7;
+color:#6e6e73;
+}
+
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+margin-top:35px;
+}
+
+
+.skills span{
+padding:12px 22px;
+border-radius:50px;
+background:#0071e3;
+color:white;
+}
+
+
+.stats{
+display:flex;
+justify-content:space-around;
+flex-wrap:wrap;
+gap:30px;
+margin-top:60px;
+}
+
+
+.stats b{
+font-size:55px;
+display:block;
+color:#0071e3;
+}
+
+
+
+form{
+max-width:500px;
+margin:50px auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+
+input,
+textarea{
+padding:20px;
+border-radius:25px;
+border:1px solid #ddd;
+font-size:16px;
+}
+
+
+textarea{
+height:160px;
+resize:none;
+}
+
+
+.reveal{
+opacity:0;
+transform:translateY(60px);
+transition:1s;
+}
+
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+
+footer{
+text-align:center;
+padding:40px;
+background:#111;
+color:#777;
+}
+
+
+
+@media(max-width:768px){
+
+.menu{
+display:none;
+}
+
+.hero h1{
+font-size:80px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+.phone{
+width:220px;
+height:440px;
+}
+
+.tablet{
+width:330px;
+height:230px;
+}
+
+.title{
+font-size:42px;
+}
+
+section{
+padding:80px 20px;
+}
+
+.card{
+width:100%;
+}
+
+.about-box{
+padding:35px 25px;
+}
+
 }
    </style>
 
@@ -279,9 +497,7 @@ margin-bottom:60px;
 
 
 <body>
-
-
-<!-- LOADER -->
+   <!-- LOADER -->
 
 <div class="loader">
 
@@ -299,7 +515,8 @@ Soncha Production
 
 
 
-<!-- MENU -->
+<!-- NAV -->
+
 
 <nav>
 
@@ -312,17 +529,28 @@ Soncha<span>Production</span>
 
 <div class="menu">
 
-<a href="#home">Главная</a>
+<a href="#home">
+Главная
+</a>
 
-<a href="#projects">Проекты</a>
+<a href="#projects">
+Проекты
+</a>
 
-<a href="#services">Услуги</a>
+<a href="#services">
+Услуги
+</a>
 
-<a href="#about">Обо мне</a>
+<a href="#about">
+Обо мне
+</a>
 
-<a href="#contact">Контакты</a>
+<a href="#contact">
+Контакты
+</a>
 
 </div>
+
 
 
 
@@ -339,7 +567,9 @@ Soncha<span>Production</span>
 
 
 
+
 <!-- HERO -->
+
 
 <section class="hero" id="home">
 
@@ -358,7 +588,7 @@ Soncha
 
 
 
-<a href="#contact" class="button">
+<a class="button" href="#contact">
 Обсудить проект →
 </a>
 
@@ -369,6 +599,7 @@ Soncha
 <div class="devices">
 
 
+
 <div class="phone">
 
 <div class="screen">
@@ -376,6 +607,7 @@ Soncha
 </div>
 
 </div>
+
 
 
 
@@ -469,6 +701,7 @@ UI/UX дизайн и создание
 
 
 
+
 <div class="card">
 
 
@@ -481,8 +714,8 @@ Future
 
 
 <p>
-Новые технологии и цифровые
-решения будущего.
+Технологии нового поколения
+и цифровые решения.
 </p>
 
 
@@ -494,6 +727,7 @@ Future
 
 
 </section>
+
 
 
 
@@ -521,30 +755,36 @@ Future
 
 <div class="card">
 
+
 <h3>
 💻 Web
 </h3>
+
 
 <p>
 Создание сайтов,
 лендингов и портфолио.
 </p>
 
+
 </div>
 
 
 
 
 <div class="card">
+
 
 <h3>
-🎨 UI/UX
+🎨 Design
 </h3>
 
+
 <p>
-Дизайн интерфейсов
-и стиль бренда.
+UI/UX дизайн,
+интерфейсы и стиль.
 </p>
+
 
 </div>
 
@@ -552,24 +792,27 @@ Future
 
 
 <div class="card">
+
 
 <h3>
 🚀 Animation
 </h3>
 
+
 <p>
-Плавные анимации
-и интерактивные элементы.
+Плавные эффекты,
+анимации и интерактив.
 </p>
 
+
 </div>
+
 
 
 </div>
 
 
 </section>
-
 
 
 
@@ -602,26 +845,39 @@ Soncha Production
 
 <p>
 Создаю минималистичные цифровые продукты.
-Каждый проект — это сочетание дизайна,
-скорости и современных технологий.
+Люблю чистый дизайн, современные технологии
+и внимание к деталям.
 </p>
+
 
 
 
 
 <div class="skills">
 
-<span>HTML5</span>
+<span>
+HTML5
+</span>
 
-<span>CSS3</span>
+<span>
+CSS3
+</span>
 
-<span>JavaScript</span>
+<span>
+JavaScript
+</span>
 
-<span>UI/UX</span>
+<span>
+UI/UX
+</span>
 
-<span>Responsive</span>
+<span>
+Responsive
+</span>
 
-<span>Animation</span>
+<span>
+Animation
+</span>
 
 </div>
 
@@ -637,9 +893,9 @@ Soncha Production
 3+
 </b>
 
-<span>
+<p>
 Проекта
-</span>
+</p>
 
 </div>
 
@@ -652,9 +908,9 @@ Soncha Production
 100%
 </b>
 
-<span>
-Индивидуальный дизайн
-</span>
+<p>
+Уникальный дизайн
+</p>
 
 </div>
 
@@ -667,9 +923,9 @@ Soncha Production
 24/7
 </b>
 
-<span>
+<p>
 Поддержка
-</span>
+</p>
 
 </div>
 
@@ -680,18 +936,10 @@ Soncha Production
 
 
 </div>
+
 
 
 </section>
-
-
-
-
-
-
-
-
-
 <!-- CONTACT -->
 
 
@@ -699,7 +947,7 @@ Soncha Production
 
 
 <h2 class="title">
-Контакты
+Связаться
 </h2>
 
 
@@ -708,25 +956,30 @@ Soncha Production
 <form>
 
 
-<input placeholder="Ваше имя">
+<input placeholder="Имя">
 
 
 <input placeholder="Email">
 
 
-<textarea placeholder="Расскажите о проекте"></textarea>
+<textarea placeholder="Сообщение"></textarea>
+
 
 
 <button class="button" type="button">
+
 Отправить →
+
 </button>
+
 
 
 </form>
 
 
-
 </section>
+
+
 
 
 
@@ -738,326 +991,113 @@ Soncha Production
 © 2026 Soncha Production
 
 </footer>
-/* CARDS */
-
-.cards{
-display:flex;
-justify-content:center;
-gap:35px;
-flex-wrap:wrap;
-}
 
 
-.card{
-
-width:330px;
-background:#fff;
-border-radius:35px;
-overflow:hidden;
-box-shadow:0 20px 60px rgba(0,0,0,.08);
-transition:.5s;
-
-opacity:0;
-transform:translateY(50px);
-
-}
 
 
-body.dark .card{
 
-background:#1c1c1e;
+
+<script>
+
+
+// DARK MODE
+
+
+const themeBtn = document.getElementById("themeBtn");
+
+
+themeBtn.addEventListener("click",()=>{
+
+
+document.body.classList.toggle("dark");
+
+
+
+if(document.body.classList.contains("dark")){
+
+themeBtn.textContent="☀️";
 
 }
 
+else{
 
-.card.show{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-
-.card:hover{
-
-transform:translateY(-15px) scale(1.03);
-
-}
-
-
-.card img{
-
-width:100%;
-height:220px;
-object-fit:cover;
-display:block;
-transition:.5s;
-
-}
-
-
-.card:hover img{
-
-transform:scale(1.08);
-
-}
-
-
-.card h3{
-
-font-size:32px;
-margin:25px;
-
-}
-
-
-.card p{
-
-margin:0 25px 30px;
-color:#6e6e73;
-line-height:1.6;
-
-}
-
-
-body.dark .card p{
-
-color:#aaa;
+themeBtn.textContent="🌙";
 
 }
 
 
 
-/* ABOUT */
+});
 
 
-.about-box{
-
-max-width:1000px;
-margin:auto;
-padding:60px;
-border-radius:45px;
-background:rgba(255,255,255,.8);
-backdrop-filter:blur(20px);
-
-}
 
 
-body.dark .about-box{
-
-background:#111;
-
-}
 
 
-.about-box h3{
 
-font-size:45px;
-margin-bottom:25px;
-
-}
+// REVEAL ANIMATION
 
 
-.about-box p{
+function reveal(){
 
-font-size:22px;
-line-height:1.7;
-color:#6e6e73;
+
+const elements=document.querySelectorAll(".reveal");
+
+
+elements.forEach(element=>{
+
+
+const position=element.getBoundingClientRect().top;
+
+
+if(position < window.innerHeight - 100){
+
+element.classList.add("active");
 
 }
 
 
-.skills{
+});
 
-display:flex;
-flex-wrap:wrap;
-gap:15px;
-margin-top:35px;
 
 }
 
 
-.skills span{
+window.addEventListener("scroll",reveal);
 
-padding:12px 22px;
-background:#0071e3;
-border-radius:50px;
-color:white;
+reveal();
 
-}
 
 
-.stats{
 
-display:flex;
-justify-content:space-around;
-flex-wrap:wrap;
-gap:30px;
-margin-top:60px;
 
-}
 
 
-.stats div{
 
-text-align:center;
+// CARD ANIMATION
 
-}
 
+const cards=document.querySelectorAll(".card");
 
-.stats b{
 
-display:block;
-font-size:55px;
-background:linear-gradient(135deg,#0071e3,#8b5cff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+cards.forEach((card,index)=>{
 
-}
 
+setTimeout(()=>{
 
-/* FORM */
+card.classList.add("show");
 
+},index*200);
 
-form{
 
-max-width:500px;
-margin:50px auto;
-display:flex;
-flex-direction:column;
-gap:20px;
+});
 
-}
 
 
-input,
-textarea{
+</script>
 
-padding:20px;
-border-radius:25px;
-border:1px solid #ddd;
-font-size:16px;
 
-}
 
+</body>
 
-textarea{
-
-height:160px;
-resize:none;
-
-}
-
-
-
-body.dark input,
-body.dark textarea{
-
-background:#1c1c1e;
-color:white;
-
-}
-
-
-
-
-/* REVEAL */
-
-
-.reveal{
-
-opacity:0;
-transform:translateY(60px);
-transition:1s;
-
-}
-
-
-.reveal.active{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-
-
-/* MOBILE */
-
-
-@media(max-width:768px){
-
-
-.menu{
-
-display:none;
-
-}
-
-
-.hero h1{
-
-font-size:80px;
-
-}
-
-
-.hero p{
-
-font-size:20px;
-
-}
-
-
-.phone{
-
-width:220px;
-height:440px;
-
-}
-
-
-.tablet{
-
-width:330px;
-height:230px;
-
-}
-
-
-.title{
-
-font-size:42px;
-
-}
-
-
-section{
-
-padding:80px 20px;
-
-}
-
-
-.card{
-
-width:100%;
-
-}
-
-
-.about-box{
-
-padding:35px 25px;
-
-}
-
-
-.about-box h3{
-
-font-size:32px;
-
-}
-
-
-}
+</html>
