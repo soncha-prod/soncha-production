@@ -8,7 +8,6 @@
 
 <title>Soncha Production</title>
 
-
 <style>
 
 *{
@@ -18,648 +17,283 @@ box-sizing:border-box;
 scroll-behavior:smooth;
 }
 
-
 body{
-
-font-family:
--apple-system,
-BlinkMacSystemFont,
-"SF Pro Display",
-Arial,
-sans-serif;
-
+font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Arial,sans-serif;
 background:#fff;
 color:#111;
-
+overflow-x:hidden;
 transition:.4s;
-
 }
-
 
 body.dark{
-
 background:#000;
 color:#fff;
-
 }
-
 
 a{
-
 text-decoration:none;
 color:inherit;
-
 }
-
-
-
 
 
 /* LOADER */
 
-
 .loader{
-
 position:fixed;
 inset:0;
-
-background:#fff;
-
+background:white;
 display:flex;
 flex-direction:column;
-
-justify-content:center;
 align-items:center;
-
+justify-content:center;
 z-index:9999;
-
 animation:hide 2.5s forwards;
-
 }
-
-
 
 body.dark .loader{
-
 background:#000;
-
 }
-
-
 
 .loader-logo{
-
-width:100px;
-height:100px;
-
-border-radius:30px;
-
-background:#0071e3;
-
-color:white;
-
+width:110px;
+height:110px;
+border-radius:35px;
+background:linear-gradient(135deg,#0071e3,#7b5cff);
 display:flex;
-
 align-items:center;
 justify-content:center;
-
+color:white;
 font-size:45px;
-
 font-weight:800;
-
 animation:pulse 1.5s infinite;
-
 }
-
-
 
 .loader p{
-
 margin-top:25px;
-
 font-size:22px;
-
 }
-
 
 
 @keyframes hide{
-
 to{
-
 opacity:0;
-
 visibility:hidden;
-
 }
-
 }
-
 
 
 @keyframes pulse{
-
 50%{
-
 transform:scale(1.1);
-
+}
 }
 
-}
 
 
-
-
-
-
-
-/* NAV */
-
+/* NAV — НЕ МЕНЯЕМ */
 
 nav{
-
 position:fixed;
-
 top:20px;
-
 left:50%;
-
 transform:translateX(-50%);
-
 width:90%;
-
 max-width:1100px;
-
 padding:18px 30px;
-
 border-radius:50px;
-
 background:rgba(255,255,255,.7);
-
 backdrop-filter:blur(20px);
-
 display:flex;
-
 justify-content:space-between;
-
 align-items:center;
-
 z-index:1000;
-
 }
-
-
 
 body.dark nav{
-
 background:rgba(30,30,30,.7);
-
 }
-
 
 
 .logo{
-
 font-size:24px;
-
 font-weight:700;
-
 }
-
-
 
 .logo span{
-
 color:#0071e3;
-
 }
-
 
 
 .menu{
-
 display:flex;
-
 gap:30px;
-
 }
-
 
 
 .menu a{
-
 color:#666;
-
 transition:.3s;
-
 }
-
 
 
 .menu a:hover{
-
 color:#0071e3;
-
 }
-
 
 
 .theme{
-
 width:45px;
-
 height:45px;
-
 border:none;
-
 border-radius:50%;
-
 cursor:pointer;
-
 font-size:20px;
-
 }
-
-
 
 
 
 
 /* HERO */
 
-
 .hero{
-
 min-height:100vh;
-
+position:relative;
 display:flex;
-
 flex-direction:column;
-
 justify-content:center;
-
 align-items:center;
-
 text-align:center;
-
 padding:120px 30px;
-
+overflow:hidden;
 }
 
+
+.hero::before{
+content:"";
+position:absolute;
+width:700px;
+height:700px;
+background:#0071e3;
+filter:blur(180px);
+opacity:.18;
+top:-200px;
+left:-200px;
+}
 
 
 .hero h1{
-
-font-size:clamp(70px,12vw,150px);
-
-letter-spacing:-8px;
-
-animation:heroFade 1s ease;
-
+position:relative;
+font-size:clamp(80px,12vw,160px);
+letter-spacing:-10px;
+font-weight:800;
 }
-
 
 
 .hero p{
-
-max-width:700px;
-
+position:relative;
+max-width:750px;
 margin-top:30px;
-
 font-size:28px;
-
 color:#6e6e73;
-
-animation:heroFade 1.3s ease;
-
+line-height:1.4;
 }
-
 
 
 .button{
-
+display:inline-block;
 margin-top:40px;
-
-padding:18px 40px;
-
+padding:18px 45px;
 border-radius:50px;
-
 background:#0071e3;
-
 color:white;
-
 font-size:18px;
-
-transition:.3s;
-
-animation:heroFade 1.5s ease;
-
+transition:.4s;
 }
-
 
 
 .button:hover{
-
-transform:scale(1.05);
-
+transform:translateY(-5px) scale(1.05);
+box-shadow:0 20px 50px rgba(0,113,227,.35);
 }
-
-
-
-@keyframes heroFade{
-
-from{
-
-opacity:0;
-
-transform:translateY(40px);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
 
 
 
 /* DEVICES */
 
-
 .devices{
-
-margin-top:80px;
-
+margin-top:90px;
 display:flex;
-
-gap:40px;
-
 justify-content:center;
-
 align-items:center;
-
+gap:40px;
 flex-wrap:wrap;
-
 }
-
 
 
 .phone,
 .tablet{
-
 background:#111;
-
 padding:12px;
-
-animation:float 4s infinite;
-
+box-shadow:0 40px 80px rgba(0,0,0,.25);
+animation:float 5s infinite;
 }
-
 
 
 .phone{
-
 width:280px;
-
 height:560px;
-
 border-radius:45px;
-
 }
-
 
 
 .tablet{
-
 width:520px;
-
 height:360px;
-
 border-radius:40px;
-
 }
-
 
 
 .screen{
-
 height:100%;
-
 border-radius:35px;
-
-background:linear-gradient(135deg,#0071e3,#111);
-
+background:linear-gradient(135deg,#0071e3,#7b5cff);
 display:flex;
-
-justify-content:center;
-
 align-items:center;
-
+justify-content:center;
 color:white;
-
 font-size:40px;
-
 font-weight:800;
-
 }
-
 
 
 .tablet .screen{
-
 font-size:60px;
-
 }
-
 
 
 @keyframes float{
 
 50%{
-
 transform:translateY(-20px);
-
 }
 
 }
-    section{
+
+
+
+/* SECTIONS */
+
+section{
 padding:120px 40px;
 }
 
 
 .title{
-
 text-align:center;
-
 font-size:65px;
-
+letter-spacing:-2px;
 }
-
-
-
-/* REVEAL ANIMATION */
-
-
-.reveal{
-
-opacity:0;
-
-transform:translateY(60px);
-
-transition:1s ease;
-
-}
-
-
-.reveal.active{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-
-
-/* CARDS */
-
-
-.cards{
-
-display:flex;
-
-justify-content:center;
-
-gap:35px;
-
-flex-wrap:wrap;
-
-margin-top:70px;
-
-}
-
-
-
-.card{
-
-width:330px;
-
-background:white;
-
-border-radius:35px;
-
-overflow:hidden;
-
-transition:.5s;
-
-opacity:0;
-
-transform:translateY(50px);
-
-}
-
-
-
-body.dark .card{
-
-background:#1c1c1e;
-
-}
-
-
-
-.card.show{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-
-
-.card:hover{
-
-transform:translateY(-15px) scale(1.03);
-
-}
-
-
-
-.card img{
-
-width:100%;
-
-height:220px;
-
-object-fit:cover;
-
-}
-
-
-
-.card h3{
-
-font-size:32px;
-
-margin:25px;
-
-}
-
-
-
-.card p{
-
-margin:0 25px 30px;
-
-color:#6e6e73;
-
-}
-
-
-
-
-form{
-
-max-width:500px;
-
-margin:50px auto;
-
-display:flex;
-
-flex-direction:column;
-
-gap:20px;
-
-}
-
-
-
-input,
-textarea{
-
-padding:20px;
-
-border-radius:25px;
-
-border:1px solid #ddd;
-
-font-size:16px;
-
-}
-
-
-
-textarea{
-
-height:150px;
-
-}
-
-
-
-footer{
-
-text-align:center;
-
-padding:40px;
-
-background:#111;
-
-color:#777;
-
-}
-
-
-
-</style>
+    </style>
 
 </head>
 
@@ -667,34 +301,24 @@ color:#777;
 <body>
 
 
-
 <div class="loader">
 
 <div class="loader-logo">
-
 SP
-
 </div>
 
 <p>
-
 Soncha Production
-
 </p>
 
 </div>
 
 
 
-
-
 <nav>
 
-
 <div class="logo">
-
 Soncha<span>Production</span>
-
 </div>
 
 
@@ -714,15 +338,10 @@ Soncha<span>Production</span>
 
 
 <button class="theme" onclick="theme()">
-
 🌙
-
 </button>
 
-
 </nav>
-
-
 
 
 
@@ -731,25 +350,19 @@ Soncha<span>Production</span>
 
 
 <h1>
-
 Soncha
-
 </h1>
 
 
 <p>
-
-Создаю цифровые продукты, где дизайн встречается с технологиями.
-
+Создаю цифровые продукты, где премиальный дизайн
+встречается с современными технологиями.
 </p>
 
 
 <a class="button" href="#contact">
-
 Обсудить проект →
-
 </a>
-
 
 
 
@@ -759,9 +372,7 @@ Soncha
 <div class="phone">
 
 <div class="screen">
-
 Soncha
-
 </div>
 
 </div>
@@ -771,13 +382,10 @@ Soncha
 <div class="tablet">
 
 <div class="screen">
-
-Soncha
-
+Production
 </div>
 
 </div>
-
 
 
 </div>
@@ -794,9 +402,7 @@ Soncha
 
 
 <h2 class="title">
-
 Проекты
-
 </h2>
 
 
@@ -806,23 +412,16 @@ Soncha
 
 <div class="card">
 
-
 <img src="images/website.jpeg">
 
-
 <h3>
-
 Website
-
 </h3>
 
-
 <p>
-
-Современные сайты и цифровые решения.
-
+Современные сайты с адаптивным дизайном,
+анимациями и быстрым интерфейсом.
 </p>
-
 
 </div>
 
@@ -830,24 +429,17 @@ Website
 
 
 <div class="card">
-
 
 <img src="images/design.jpg">
 
-
 <h3>
-
 Design
-
 </h3>
 
-
 <p>
-
-UI/UX дизайн и визуальные концепции.
-
+Создание визуального стиля,
+UI/UX концепции и оформление бренда.
 </p>
-
 
 </div>
 
@@ -856,32 +448,25 @@ UI/UX дизайн и визуальные концепции.
 
 <div class="card">
 
-
 <img src="images/future.jpeg">
 
-
 <h3>
-
 Future
-
 </h3>
 
-
 <p>
-
-Технологии нового поколения.
-
+Эксперименты с технологиями
+и цифровыми решениями будущего.
 </p>
 
-
 </div>
-
 
 
 </div>
 
 
 </section>
+
 
 
 
@@ -892,10 +477,9 @@ Future
 
 
 <h2 class="title">
-
 Услуги
-
 </h2>
+
 
 
 <div class="cards">
@@ -903,19 +487,14 @@ Future
 
 <div class="card">
 
-<h3>💻 Web</h3>
+<h3>
+💻 Web
+</h3>
 
-<p>Создание сайтов.</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>🎨 Design</h3>
-
-<p>Интерфейсы и стиль.</p>
+<p>
+Создание современных сайтов:
+лендинги, портфолио, сайты компаний.
+</p>
 
 </div>
 
@@ -923,9 +502,30 @@ Future
 
 <div class="card">
 
-<h3>🚀 Future</h3>
+<h3>
+🎨 UI/UX
+</h3>
 
-<p>Новые идеи.</p>
+<p>
+Минималистичный дизайн интерфейсов
+в стиле Apple.
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>
+🚀 Animation
+</h3>
+
+<p>
+Плавные эффекты, переходы
+и интерактивные элементы.
+</p>
 
 </div>
 
@@ -934,6 +534,8 @@ Future
 
 
 </section>
+
+
 
 
 
@@ -944,20 +546,99 @@ Future
 
 
 <h2 class="title">
-
 Обо мне
-
 </h2>
 
 
-<p style="text-align:center;font-size:25px;margin-top:40px;">
 
-Создаю минималистичные цифровые продукты.
+<div class="about-box">
 
+
+<h3>
+Soncha Production
+</h3>
+
+
+<p>
+Создаю сайты и цифровые продукты
+с упором на минимализм, скорость
+и красивый пользовательский опыт.
 </p>
 
 
+
+<div class="skills">
+
+
+<span>HTML5</span>
+
+<span>CSS3</span>
+
+<span>JavaScript</span>
+
+<span>UI/UX</span>
+
+<span>Responsive</span>
+
+<span>Animation</span>
+
+
+</div>
+
+
+
+<div class="stats">
+
+
+<div>
+<b>
+3+
+</b>
+
+<span>
+Проекта
+</span>
+
+</div>
+
+
+
+<div>
+<b>
+100%
+</b>
+
+<span>
+Индивидуальный дизайн
+</span>
+
+</div>
+
+
+
+
+<div>
+<b>
+24/7
+</b>
+
+<span>
+Поддержка
+</span>
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
 </section>
+
+
 
 
 
@@ -967,9 +648,7 @@ Future
 
 
 <h2 class="title">
-
 Связаться
-
 </h2>
 
 
@@ -987,9 +666,7 @@ Future
 
 
 <button class="button">
-
 Отправить →
-
 </button>
 
 
@@ -1009,75 +686,281 @@ Future
 </footer>
 
 
+    /* CARDS */
+
+.cards{
+display:flex;
+justify-content:center;
+gap:35px;
+flex-wrap:wrap;
+margin-top:70px;
+}
+
+
+.card{
+width:330px;
+background:white;
+border-radius:35px;
+overflow:hidden;
+transition:.5s;
+box-shadow:0 20px 50px rgba(0,0,0,.08);
+opacity:0;
+transform:translateY(50px);
+}
+
+
+body.dark .card{
+background:#1c1c1e;
+}
+
+
+.card.show{
+opacity:1;
+transform:translateY(0);
+}
+
+
+.card:hover{
+transform:translateY(-15px) scale(1.03);
+}
+
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+
+.card h3{
+font-size:32px;
+margin:25px;
+}
+
+
+.card p{
+margin:0 25px 30px;
+color:#6e6e73;
+line-height:1.6;
+}
 
 
 
-<script>
+/* ABOUT */
+
+.about-box{
+max-width:1000px;
+margin:70px auto 0;
+padding:60px;
+border-radius:45px;
+background:rgba(255,255,255,.7);
+backdrop-filter:blur(25px);
+box-shadow:0 30px 80px rgba(0,0,0,.08);
+}
 
 
-function theme(){
+body.dark .about-box{
+background:#111;
+}
 
-document.body.classList.toggle("dark");
+
+.about-box h3{
+font-size:45px;
+margin-bottom:25px;
+}
+
+
+.about-box p{
+font-size:22px;
+color:#6e6e73;
+line-height:1.7;
+}
+
+
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+margin-top:40px;
+}
+
+
+.skills span{
+padding:12px 22px;
+border-radius:50px;
+background:#0071e3;
+color:white;
+transition:.3s;
+}
+
+
+.skills span:hover{
+transform:translateY(-5px);
+}
+
+
+
+.stats{
+display:flex;
+justify-content:space-around;
+gap:30px;
+margin-top:60px;
+flex-wrap:wrap;
+}
+
+
+.stats div{
+text-align:center;
+}
+
+
+.stats b{
+display:block;
+font-size:55px;
+background:linear-gradient(135deg,#0071e3,#7b5cff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+
+.stats span{
+color:#777;
+}
+
+
+
+/* REVEAL */
+
+.reveal{
+opacity:0;
+transform:translateY(60px);
+transition:1s;
+}
+
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+
+
+/* FORM */
+
+form{
+max-width:500px;
+margin:50px auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+
+input,
+textarea{
+
+padding:20px;
+border-radius:25px;
+border:1px solid #ddd;
+font-size:16px;
+font-family:inherit;
+
+}
+
+
+textarea{
+height:150px;
+resize:none;
+}
+
+
+
+/* FOOTER */
+
+footer{
+
+text-align:center;
+padding:40px;
+background:#111;
+color:#777;
 
 }
 
 
 
+/* MOBILE */
 
-function reveal(){
-
-
-let elements=document.querySelectorAll(".reveal");
+@media(max-width:768px){
 
 
-elements.forEach(el=>{
-
-
-let top=el.getBoundingClientRect().top;
-
-
-if(top < window.innerHeight - 100){
-
-el.classList.add("active");
-
+nav{
+width:95%;
+padding:15px 20px;
 }
 
 
-});
-
-
+.menu{
+display:none;
 }
 
 
-
-window.addEventListener("scroll",reveal);
-
-reveal();
-
-
+.hero h1{
+font-size:80px;
+letter-spacing:-5px;
+}
 
 
-
-let cards=document.querySelectorAll(".card");
-
-
-cards.forEach((card,index)=>{
+.hero p{
+font-size:20px;
+}
 
 
-setTimeout(()=>{
-
-card.classList.add("show");
-
-},index*200);
-
-
-});
+.tablet{
+width:320px;
+height:220px;
+}
 
 
+.phone{
+width:220px;
+height:440px;
+}
 
-</script>
+
+.title{
+font-size:42px;
+}
 
 
-</body>
+section{
+padding:80px 20px;
+}
 
-</html>
+
+.about-box{
+padding:35px 25px;
+}
+
+
+.about-box h3{
+font-size:32px;
+}
+
+
+.about-box p{
+font-size:18px;
+}
+
+
+.stats b{
+font-size:42px;
+}
+
+
+.card{
+width:100%;
+max-width:350px;
+}
+
+}
