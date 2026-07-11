@@ -2566,3 +2566,48 @@ nav {
 
 
 }
+/* ==========================
+   MOBILE SKILLS FINAL FIX
+========================== */
+
+
+@media (max-width:700px){
+
+
+.skills {
+
+    display:flex !important;
+
+    flex-direction:column !important;
+
+    align-items:center !important;
+
+    width:100% !important;
+
+    gap:15px !important;
+
+}
+
+
+
+.skills div {
+
+    width:90% !important;
+
+    max-width:320px !important;
+
+    box-sizing:border-box !important;
+
+    text-align:center !important;
+
+    padding:14px 10px !important;
+
+    font-size:16px !important;
+
+    white-space:normal !important;
+
+}
+
+
+
+}
