@@ -17,114 +17,80 @@ box-sizing:border-box;
 scroll-behavior:smooth;
 }
 
-
 body{
-
 font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Arial,sans-serif;
 background:#fff;
 color:#111;
 transition:.4s;
 overflow-x:hidden;
-
 }
-
 
 body.dark{
-
 background:#000;
 color:#fff;
-
 }
-
 
 a{
-
 text-decoration:none;
 color:inherit;
-
 }
-
-
 
 
 /* LOADER */
 
-
 .loader{
-
 position:fixed;
 inset:0;
-background:white;
+background:#fff;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 z-index:9999;
-animation:loaderHide 2.5s forwards;
-
+animation:hide 2.5s forwards;
 }
-
 
 body.dark .loader{
-
 background:#000;
-
 }
 
-
 .loader-logo{
-
 width:110px;
 height:110px;
 border-radius:35px;
 background:linear-gradient(135deg,#0071e3,#8b5cff);
+color:#fff;
 display:flex;
 align-items:center;
 justify-content:center;
-color:white;
 font-size:45px;
 font-weight:800;
 animation:pulse 1.5s infinite;
-
 }
-
 
 .loader p{
-
 margin-top:25px;
 font-size:22px;
-
 }
 
-
-
-@keyframes loaderHide{
-
+@keyframes hide{
 to{
 opacity:0;
 visibility:hidden;
 }
-
 }
 
-
 @keyframes pulse{
-
 50%{
 transform:scale(1.1);
 }
-
 }
-
-
 
 
 
 /* NAV */
 
-
 nav{
-
 position:fixed;
 top:20px;
 left:50%;
@@ -139,78 +105,49 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 z-index:1000;
-
 }
-
 
 body.dark nav{
-
-background:rgba(30,30,30,.75);
-
+background:rgba(30,30,30,.7);
 }
-
-
 
 .logo{
-
 font-size:24px;
 font-weight:700;
-
 }
-
 
 .logo span{
-
 color:#0071e3;
-
 }
-
-
 
 .menu{
-
 display:flex;
 gap:30px;
-
 }
-
-
 
 .menu a{
-
 color:#666;
 transition:.3s;
-
 }
-
 
 .menu a:hover{
-
 color:#0071e3;
-
 }
 
-
-
 .theme{
-
 width:45px;
 height:45px;
 border:0;
 border-radius:50%;
 cursor:pointer;
 font-size:20px;
-
 }
-
 
 
 
 /* HERO */
 
-
 .hero{
-
 min-height:100vh;
 display:flex;
 flex-direction:column;
@@ -220,13 +157,9 @@ text-align:center;
 padding:120px 30px;
 position:relative;
 overflow:hidden;
-
 }
 
-
-
 .hero:before{
-
 content:"";
 position:absolute;
 width:700px;
@@ -236,37 +169,25 @@ filter:blur(180px);
 opacity:.18;
 top:-200px;
 left:-200px;
-
 }
 
-
-
 .hero h1{
-
 font-size:clamp(80px,12vw,160px);
 letter-spacing:-10px;
 font-weight:800;
 z-index:1;
-
 }
-
-
 
 .hero p{
-
 max-width:750px;
-font-size:28px;
-line-height:1.5;
 margin-top:30px;
+font-size:28px;
 color:#6e6e73;
+line-height:1.5;
 z-index:1;
-
 }
 
-
-
 .button{
-
 margin-top:40px;
 padding:18px 45px;
 border-radius:50px;
@@ -275,131 +196,92 @@ color:white;
 font-size:18px;
 border:none;
 cursor:pointer;
-transition:.4s;
+transition:.3s;
 display:inline-block;
-
 }
-
-
 
 .button:hover{
-
-transform:translateY(-6px);
-box-shadow:0 20px 50px rgba(0,113,227,.4);
-
+transform:translateY(-5px);
 }
-
-
 
 
 
 /* DEVICES */
 
-
 .devices{
-
 margin-top:90px;
 display:flex;
 gap:40px;
 justify-content:center;
 align-items:center;
 flex-wrap:wrap;
-z-index:1;
-
+z-index:2;
 }
-
-
 
 .phone,
 .tablet{
-
 background:#111;
 padding:12px;
-box-shadow:0 40px 80px rgba(0,0,0,.25);
+box-shadow:0 30px 80px rgba(0,0,0,.25);
 animation:float 5s infinite;
-
 }
 
-
-
 .phone{
-
 width:280px;
 height:560px;
 border-radius:45px;
-
 }
 
-
-
 .tablet{
-
 width:520px;
 height:360px;
 border-radius:40px;
-
 }
 
-
-
 .screen{
-
 height:100%;
 border-radius:35px;
 background:linear-gradient(135deg,#0071e3,#8b5cff);
 display:flex;
 align-items:center;
 justify-content:center;
-color:white;
+color:#fff;
 font-size:40px;
 font-weight:800;
-
 }
-
-
 
 .tablet .screen{
-
 font-size:60px;
-
 }
 
-
-
 @keyframes float{
-
 50%{
 transform:translateY(-20px);
 }
-
 }
-
 
 
 
 /* SECTIONS */
 
-
 section{
-
 padding:120px 40px;
-
 }
 
-
-
 .title{
-
 text-align:center;
 font-size:65px;
 margin-bottom:60px;
-
 }
-   </head>
+   </style>
+
+</head>
 
 
 <body>
 
+
+<!-- LOADER -->
 
 <div class="loader">
 
@@ -416,6 +298,8 @@ Soncha Production
 
 
 
+
+<!-- MENU -->
 
 <nav>
 
@@ -455,6 +339,8 @@ Soncha<span>Production</span>
 
 
 
+<!-- HERO -->
+
 <section class="hero" id="home">
 
 
@@ -468,6 +354,7 @@ Soncha
 Создаю современные сайты и цифровые продукты,
 где дизайн встречается с технологиями.
 </p>
+
 
 
 
@@ -492,6 +379,7 @@ Soncha
 
 
 
+
 <div class="tablet">
 
 <div class="screen">
@@ -499,6 +387,7 @@ Production
 </div>
 
 </div>
+
 
 
 </div>
@@ -514,12 +403,17 @@ Production
 
 
 
+
+<!-- PROJECTS -->
+
+
 <section id="projects" class="reveal">
 
 
 <h2 class="title">
 Проекты
 </h2>
+
 
 
 
@@ -530,7 +424,7 @@ Production
 <div class="card">
 
 
-<img src="images/website.jpeg" alt="Website">
+<img src="images/website.jpeg">
 
 
 <h3>
@@ -550,10 +444,11 @@ Website
 
 
 
+
 <div class="card">
 
 
-<img src="images/design.jpg" alt="Design">
+<img src="images/design.jpg">
 
 
 <h3>
@@ -562,12 +457,13 @@ Design
 
 
 <p>
-UI/UX дизайн и визуальные концепции
-для цифровых продуктов.
+UI/UX дизайн и создание
+визуального стиля.
 </p>
 
 
 </div>
+
 
 
 
@@ -576,7 +472,7 @@ UI/UX дизайн и визуальные концепции
 <div class="card">
 
 
-<img src="images/future.jpeg" alt="Future">
+<img src="images/future.jpeg">
 
 
 <h3>
@@ -585,8 +481,8 @@ Future
 
 
 <p>
-Новые технологии и идеи
-для проектов будущего.
+Новые технологии и цифровые
+решения будущего.
 </p>
 
 
@@ -595,7 +491,6 @@ Future
 
 
 </div>
-
 
 
 </section>
@@ -607,6 +502,8 @@ Future
 
 
 
+
+<!-- SERVICES -->
 
 
 <section id="services" class="reveal">
@@ -620,7 +517,6 @@ Future
 
 
 <div class="cards">
-
 
 
 <div class="card">
@@ -646,12 +542,11 @@ Future
 </h3>
 
 <p>
-Минималистичный дизайн
-и удобные интерфейсы.
+Дизайн интерфейсов
+и стиль бренда.
 </p>
 
 </div>
-
 
 
 
@@ -663,16 +558,14 @@ Future
 </h3>
 
 <p>
-Плавные эффекты,
-анимации и интерактив.
+Плавные анимации
+и интерактивные элементы.
 </p>
 
 </div>
 
 
-
 </div>
-
 
 
 </section>
@@ -682,6 +575,10 @@ Future
 
 
 
+
+
+
+<!-- ABOUT -->
 
 
 <section id="about" class="reveal">
@@ -697,7 +594,6 @@ Future
 <div class="about-box">
 
 
-
 <h3>
 Soncha Production
 </h3>
@@ -705,10 +601,9 @@ Soncha Production
 
 
 <p>
-Создаю современные цифровые продукты
-с вниманием к деталям.
-Минимализм, скорость и стиль —
-основа каждого проекта.
+Создаю минималистичные цифровые продукты.
+Каждый проект — это сочетание дизайна,
+скорости и современных технологий.
 </p>
 
 
@@ -716,46 +611,24 @@ Soncha Production
 
 <div class="skills">
 
+<span>HTML5</span>
 
-<span>
-HTML5
-</span>
+<span>CSS3</span>
 
+<span>JavaScript</span>
 
-<span>
-CSS3
-</span>
+<span>UI/UX</span>
 
+<span>Responsive</span>
 
-<span>
-JavaScript
-</span>
-
-
-<span>
-UI/UX
-</span>
-
-
-<span>
-Responsive
-</span>
-
-
-<span>
-Animation
-</span>
-
+<span>Animation</span>
 
 </div>
 
 
 
 
-
-
 <div class="stats">
-
 
 
 <div>
@@ -780,7 +653,7 @@ Animation
 </b>
 
 <span>
-Уникальный дизайн
+Индивидуальный дизайн
 </span>
 
 </div>
@@ -809,7 +682,6 @@ Animation
 </div>
 
 
-
 </section>
 
 
@@ -820,12 +692,16 @@ Animation
 
 
 
+<!-- CONTACT -->
+
+
 <section id="contact" class="reveal">
 
 
 <h2 class="title">
 Контакты
 </h2>
+
 
 
 
@@ -846,7 +722,6 @@ Animation
 </button>
 
 
-
 </form>
 
 
@@ -863,36 +738,29 @@ Animation
 © 2026 Soncha Production
 
 </footer>
-   /* =========================
-   PROJECTS + CARDS
-========================= */
-
+/* CARDS */
 
 .cards{
-
 display:flex;
 justify-content:center;
 gap:35px;
 flex-wrap:wrap;
-
 }
-
 
 
 .card{
 
 width:330px;
-background:white;
+background:#fff;
 border-radius:35px;
 overflow:hidden;
-transition:.5s ease;
 box-shadow:0 20px 60px rgba(0,0,0,.08);
+transition:.5s;
 
 opacity:0;
-transform:translateY(60px);
+transform:translateY(50px);
 
 }
-
 
 
 body.dark .card{
@@ -900,7 +768,6 @@ body.dark .card{
 background:#1c1c1e;
 
 }
-
 
 
 .card.show{
@@ -911,14 +778,11 @@ transform:translateY(0);
 }
 
 
-
 .card:hover{
 
 transform:translateY(-15px) scale(1.03);
-box-shadow:0 30px 80px rgba(0,113,227,.25);
 
 }
-
 
 
 .card img{
@@ -927,18 +791,16 @@ width:100%;
 height:220px;
 object-fit:cover;
 display:block;
-transition:.6s;
+transition:.5s;
 
 }
-
 
 
 .card:hover img{
 
-transform:scale(1.1);
+transform:scale(1.08);
 
 }
-
 
 
 .card h3{
@@ -947,7 +809,6 @@ font-size:32px;
 margin:25px;
 
 }
-
 
 
 .card p{
@@ -959,7 +820,6 @@ line-height:1.6;
 }
 
 
-
 body.dark .card p{
 
 color:#aaa;
@@ -968,11 +828,7 @@ color:#aaa;
 
 
 
-
-
-/* =========================
-   ABOUT
-========================= */
+/* ABOUT */
 
 
 .about-box{
@@ -982,11 +838,9 @@ margin:auto;
 padding:60px;
 border-radius:45px;
 background:rgba(255,255,255,.8);
-backdrop-filter:blur(25px);
-box-shadow:0 30px 80px rgba(0,0,0,.1);
+backdrop-filter:blur(20px);
 
 }
-
 
 
 body.dark .about-box{
@@ -996,14 +850,12 @@ background:#111;
 }
 
 
-
 .about-box h3{
 
 font-size:45px;
 margin-bottom:25px;
 
 }
-
 
 
 .about-box p{
@@ -1015,60 +867,35 @@ color:#6e6e73;
 }
 
 
-
-body.dark .about-box p{
-
-color:#aaa;
-
-}
-
-
-
-
-
 .skills{
 
 display:flex;
 flex-wrap:wrap;
 gap:15px;
-margin-top:40px;
+margin-top:35px;
 
 }
-
 
 
 .skills span{
 
 padding:12px 22px;
-border-radius:50px;
 background:#0071e3;
+border-radius:50px;
 color:white;
-transition:.3s;
 
 }
-
-
-
-.skills span:hover{
-
-transform:translateY(-5px);
-
-}
-
-
-
 
 
 .stats{
 
 display:flex;
 justify-content:space-around;
-gap:30px;
 flex-wrap:wrap;
+gap:30px;
 margin-top:60px;
 
 }
-
 
 
 .stats div{
@@ -1076,7 +903,6 @@ margin-top:60px;
 text-align:center;
 
 }
-
 
 
 .stats b{
@@ -1090,20 +916,7 @@ background:linear-gradient(135deg,#0071e3,#8b5cff);
 }
 
 
-
-.stats span{
-
-color:#777;
-
-}
-
-
-
-
-
-/* =========================
-   FORM
-========================= */
+/* FORM */
 
 
 form{
@@ -1117,30 +930,15 @@ gap:20px;
 }
 
 
-
 input,
 textarea{
 
-width:100%;
 padding:20px;
 border-radius:25px;
 border:1px solid #ddd;
 font-size:16px;
-font-family:inherit;
 
 }
-
-
-
-body.dark input,
-body.dark textarea{
-
-background:#1c1c1e;
-color:white;
-border-color:#333;
-
-}
-
 
 
 textarea{
@@ -1152,10 +950,18 @@ resize:none;
 
 
 
+body.dark input,
+body.dark textarea{
 
-/* =========================
-   ANIMATION
-========================= */
+background:#1c1c1e;
+color:white;
+
+}
+
+
+
+
+/* REVEAL */
 
 
 .reveal{
@@ -1167,7 +973,6 @@ transition:1s;
 }
 
 
-
 .reveal.active{
 
 opacity:1;
@@ -1177,10 +982,7 @@ transform:translateY(0);
 
 
 
-
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 
 @media(max-width:768px){
@@ -1240,7 +1042,6 @@ padding:80px 20px;
 .card{
 
 width:100%;
-max-width:350px;
 
 }
 
@@ -1255,20 +1056,6 @@ padding:35px 25px;
 .about-box h3{
 
 font-size:32px;
-
-}
-
-
-.about-box p{
-
-font-size:18px;
-
-}
-
-
-.stats b{
-
-font-size:42px;
 
 }
 
