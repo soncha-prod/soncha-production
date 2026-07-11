@@ -2629,3 +2629,138 @@ nav {
     margin-top:10px;
 
 }
+/* ==========================
+   ABOUT UPGRADE
+========================== */
+
+
+.stats {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin:40px 0;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.stat-card {
+
+    width:160px;
+
+    padding:25px;
+
+    border-radius:25px;
+
+
+    background:
+
+    rgba(255,255,255,.08);
+
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+
+    backdrop-filter:blur(15px);
+
+
+    text-align:center;
+
+
+    transition:.4s;
+
+}
+
+
+
+.stat-card:hover {
+
+    transform:translateY(-10px);
+
+}
+
+
+
+.stat-card h3 {
+
+    font-size:35px;
+
+    margin:0;
+
+}
+
+
+
+.stat-card p {
+
+    margin-top:10px;
+
+}
+
+
+
+
+
+.skills {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.skills div {
+
+    padding:15px 25px;
+
+    border-radius:30px;
+
+
+    background:
+
+    rgba(168,85,247,.15);
+
+
+    border:
+
+    1px solid rgba(168,85,247,.3);
+
+}
+
+
+
+@media(max-width:700px){
+
+
+.stats {
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+
+
+.stat-card {
+
+    width:80%;
+
+}
+
+
+}
