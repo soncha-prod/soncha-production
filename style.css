@@ -3217,3 +3217,31 @@ body::after {
     z-index:-1;
 
 }
+/* ==========================
+   SCROLL ANIMATION
+========================== */
+
+
+.fade {
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:
+
+    opacity .8s ease,
+
+    transform .8s ease;
+
+}
+
+
+
+.fade.show {
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
