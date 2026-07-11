@@ -8,1275 +8,36 @@
 
 <title>Soncha Production</title>
 
-
-<style>
-
-
-*{
-
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-
-}
-
-
-
-body{
-
-font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Arial,sans-serif;
-
-background:#fff;
-
-color:#111;
-
-transition:.4s;
-
-overflow-x:hidden;
-
-}
-
-
-
-body.dark{
-
-background:#000;
-
-color:#fff;
-
-}
-
-
-
-a{
-
-text-decoration:none;
-
-color:inherit;
-
-}
-
-
-
-
-
-/* LOADER */
-
-
-.loader{
-
-position:fixed;
-
-inset:0;
-
-background:#fff;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-flex-direction:column;
-
-z-index:9999;
-
-animation:hide 2.5s forwards;
-
-}
-
-
-
-body.dark .loader{
-
-background:#000;
-
-}
-
-
-
-.loader-logo{
-
-width:110px;
-
-height:110px;
-
-border-radius:35px;
-
-background:linear-gradient(135deg,#0071e3,#8b5cff);
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-color:#fff;
-
-font-size:45px;
-
-font-weight:800;
-
-animation:pulse 1.5s infinite;
-
-}
-
-
-
-.loader p{
-
-margin-top:25px;
-
-font-size:22px;
-
-}
-
-
-
-
-
-@keyframes hide{
-
-to{
-
-opacity:0;
-
-visibility:hidden;
-
-}
-
-}
-
-
-
-@keyframes pulse{
-
-50%{
-
-transform:scale(1.1);
-
-}
-
-}
-
-
-
-
-
-
-
-
-/* NAV */
-
-
-nav{
-
-position:fixed;
-
-top:20px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-width:90%;
-
-max-width:1100px;
-
-padding:18px 30px;
-
-border-radius:50px;
-
-background:rgba(255,255,255,.7);
-
-backdrop-filter:blur(25px);
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-z-index:1000;
-
-box-shadow:0 10px 40px rgba(0,0,0,.08);
-
-}
-
-
-
-body.dark nav{
-
-background:rgba(30,30,30,.7);
-
-}
-
-
-
-.logo{
-
-font-size:24px;
-
-font-weight:700;
-
-}
-
-
-
-.logo span{
-
-color:#0071e3;
-
-}
-
-
-
-.menu{
-
-display:flex;
-
-gap:30px;
-
-}
-
-
-
-.menu a{
-
-color:#666;
-
-transition:.3s;
-
-position:relative;
-
-}
-
-
-
-.menu a::after{
-
-content:"";
-
-position:absolute;
-
-left:0;
-
-bottom:-8px;
-
-width:0;
-
-height:2px;
-
-background:#0071e3;
-
-transition:.3s;
-
-}
-
-
-
-.menu a:hover::after{
-
-width:100%;
-
-}
-
-
-
-.menu a:hover{
-
-color:#0071e3;
-
-}
-
-
-
-.theme{
-
-width:45px;
-
-height:45px;
-
-border:none;
-
-border-radius:50%;
-
-cursor:pointer;
-
-font-size:20px;
-
-transition:.3s;
-
-}
-
-
-
-.theme:hover{
-
-transform:rotate(20deg) scale(1.1);
-
-}
-
-
-
-
-
-
-
-
-/* MOBILE BUTTON */
-
-
-.mobile-menu-btn{
-
-display:none;
-
-width:48px;
-
-height:48px;
-
-border:none;
-
-border-radius:50%;
-
-background:#0071e3;
-
-color:white;
-
-font-size:24px;
-
-cursor:pointer;
-
-align-items:center;
-
-justify-content:center;
-
-}
-
-
-
-
-
-
-
-/* HERO */
-
-
-.hero{
-
-position:relative;
-
-overflow:hidden;
-
-z-index:0;
-
-min-height:100vh;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-align-items:center;
-
-text-align:center;
-
-padding:120px 30px;
-
---moveX:0px;
-
---moveY:0px;
-
-}
-
-
-
-
-
-.hero::before{
-
-content:"";
-
-position:absolute;
-
-width:1000px;
-
-height:1000px;
-
-background:radial-gradient(
-circle,
-rgba(0,113,227,.35),
-transparent 70%
-);
-
-filter:blur(100px);
-
-left:10%;
-
-top:45%;
-
-transform:
-translate(
-calc(-50% + var(--moveX)),
-calc(-50% + var(--moveY))
-);
-
-z-index:-1;
-
-}
-
-
-
-.hero::after{
-
-content:"";
-
-position:absolute;
-
-width:1000px;
-
-height:1000px;
-
-background:radial-gradient(
-circle,
-rgba(0,113,227,.35),
-transparent 70%
-);
-
-filter:blur(100px);
-
-right:5%;
-
-top:25%;
-
-transform:
-translate(
-calc(50% + var(--moveX)),
-calc(-50% + var(--moveY))
-);
-
-z-index:-1;
-
-}
-
-
-
-
-
-
-
-.hero h1{
-
-font-size:clamp(90px,13vw,170px);
-
-letter-spacing:-12px;
-
-font-weight:900;
-
-background:linear-gradient(
-135deg,
-#111,
-#0071e3
-);
-
--webkit-background-clip:text;
-
-color:transparent;
-
-animation:title3d 1.3s ease forwards;
-
-opacity:0;
-
-}
-
-
-
-@keyframes title3d{
-
-
-from{
-
-opacity:0;
-
-transform:
-translateY(50px)
-scale(.9)
-rotateX(20deg);
-
-}
-
-
-
-to{
-
-opacity:1;
-
-transform:
-translateY(0)
-scale(1)
-rotateX(0);
-
-}
-
-
-}
-
-
-
-.hero h1:hover{
-
-transform:scale(1.03);
-
-}
-
-
-
-.hero p{
-
-max-width:750px;
-
-margin-top:35px;
-
-font-size:28px;
-
-color:#6e6e73;
-
-line-height:1.5;
-
-}
-   /* BUTTON */
-
-
-.button{
-
-margin-top:40px;
-
-padding:18px 45px;
-
-border-radius:50px;
-
-background:#0071e3;
-
-color:white;
-
-font-size:18px;
-
-border:none;
-
-cursor:pointer;
-
-display:inline-block;
-
-transition:.35s;
-
-box-shadow:
-0 15px 40px rgba(0,113,227,.25);
-
-}
-
-
-
-.button:hover{
-
-transform:
-translateY(-5px)
-scale(1.05);
-
-box-shadow:
-0 25px 60px rgba(0,113,227,.4);
-
-}
-
-
-
-
-
-
-
-
-
-/* DEVICES */
-
-
-.devices{
-
-margin-top:90px;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-gap:40px;
-
-flex-wrap:wrap;
-
-}
-
-
-
-.phone,
-.tablet{
-
-background:#111;
-
-padding:12px;
-
-box-shadow:
-0 40px 80px rgba(0,0,0,.25);
-
-animation:float 5s infinite;
-
-}
-
-
-
-.phone{
-
-width:280px;
-
-height:560px;
-
-border-radius:45px;
-
-}
-
-
-
-.tablet{
-
-width:520px;
-
-height:360px;
-
-border-radius:40px;
-
-}
-
-
-
-.screen{
-
-height:100%;
-
-border-radius:35px;
-
-background:
-linear-gradient(
-135deg,
-#0071e3,
-#8b5cff
-);
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-color:white;
-
-font-size:40px;
-
-font-weight:800;
-
-}
-
-
-
-@keyframes float{
-
-50%{
-
-transform:translateY(-25px);
-
-}
-
-}
-
-
-
-
-
-
-
-
-
-/* SECTIONS */
-
-
-section{
-
-padding:120px 40px;
-
-}
-
-
-
-.title{
-
-text-align:center;
-
-font-size:65px;
-
-margin-bottom:60px;
-
-letter-spacing:-2px;
-
-}
-
-
-
-
-
-
-
-
-
-/* CARDS */
-
-
-.cards{
-
-display:flex;
-
-justify-content:center;
-
-gap:35px;
-
-flex-wrap:wrap;
-
-}
-
-
-
-.card{
-
-width:330px;
-
-background:white;
-
-border-radius:35px;
-
-overflow:hidden;
-
-box-shadow:
-
-0 25px 70px rgba(0,0,0,.08);
-
-transition:.5s;
-
-opacity:0;
-
-transform:translateY(60px);
-
-}
-
-
-
-body.dark .card{
-
-background:#1c1c1e;
-
-}
-
-
-
-.card.show{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-
-
-.card:hover{
-
-transform:
-
-translateY(-18px)
-scale(1.03);
-
-box-shadow:
-
-0 40px 90px rgba(0,0,0,.15);
-
-}
-
-
-
-.card img{
-
-width:100%;
-
-height:230px;
-
-object-fit:cover;
-
-transition:.6s;
-
-}
-
-
-
-.card:hover img{
-
-transform:scale(1.08);
-
-}
-
-
-
-.card h3{
-
-font-size:32px;
-
-margin:25px;
-
-}
-
-
-
-.card p{
-
-margin:0 25px 30px;
-
-color:#6e6e73;
-
-line-height:1.6;
-
-}
-
-
-
-
-
-
-
-
-
-/* ABOUT */
-
-
-.about-box{
-
-max-width:1000px;
-
-margin:auto;
-
-padding:60px;
-
-border-radius:45px;
-
-background:#f5f5f7;
-
-box-shadow:
-
-0 30px 80px rgba(0,0,0,.06);
-
-}
-
-
-
-body.dark .about-box{
-
-background:#111;
-
-}
-
-
-
-.about-box h3{
-
-font-size:45px;
-
-margin-bottom:25px;
-
-}
-
-
-
-.about-box p{
-
-font-size:22px;
-
-color:#6e6e73;
-
-line-height:1.7;
-
-}
-
-
-
-.skills{
-
-display:flex;
-
-gap:15px;
-
-flex-wrap:wrap;
-
-margin-top:35px;
-
-}
-
-
-
-.skills span{
-
-padding:12px 22px;
-
-background:#0071e3;
-
-color:white;
-
-border-radius:50px;
-
-transition:.3s;
-
-}
-
-
-
-.skills span:hover{
-
-transform:translateY(-5px);
-
-}
-
-
-
-
-
-
-
-
-/* STATS */
-
-
-.stats{
-
-display:flex;
-
-justify-content:space-around;
-
-flex-wrap:wrap;
-
-gap:30px;
-
-margin-top:60px;
-
-}
-
-
-
-.stats b{
-
-font-size:55px;
-
-color:#0071e3;
-
-}
-
-
-
-
-
-
-
-
-/* FORM */
-
-
-form{
-
-max-width:500px;
-
-margin:50px auto;
-
-display:flex;
-
-flex-direction:column;
-
-gap:20px;
-
-}
-
-
-
-input,
-textarea{
-
-padding:20px;
-
-border-radius:25px;
-
-border:1px solid #ddd;
-
-font-size:16px;
-
-outline:none;
-
-transition:.3s;
-
-}
-
-
-
-input:focus,
-textarea:focus{
-
-border-color:#0071e3;
-
-box-shadow:
-
-0 0 25px rgba(0,113,227,.15);
-
-}
-
-
-
-textarea{
-
-height:160px;
-
-resize:none;
-
-}
-
-
-
-
-
-
-
-
-
-/* REVEAL */
-
-
-.reveal{
-
-opacity:0;
-
-transform:translateY(60px);
-
-transition:1s;
-
-}
-
-
-
-.reveal.active{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-
-
-
-
-
-
-
-/* FOOTER */
-
-
-footer{
-
-padding:50px;
-
-text-align:center;
-
-color:#777;
-
-}
-
-
-
-
-
-
-
-/* MOBILE */
-
-
-@media(max-width:768px){
-
-
-.menu{
-
-position:fixed;
-
-top:90px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-width:90%;
-
-padding:30px;
-
-border-radius:35px;
-
-background:rgba(255,255,255,.9);
-
-backdrop-filter:blur(20px);
-
-display:none;
-
-flex-direction:column;
-
-align-items:center;
-
-gap:25px;
-
-}
-
-
-
-.menu.active{
-
-display:flex;
-
-}
-
-
-
-.mobile-menu-btn{
-
-display:flex;
-
-}
-
-
-
-.hero h1{
-
-font-size:75px;
-
-letter-spacing:-6px;
-
-}
-
-
-
-.hero p{
-
-font-size:20px;
-
-}
-
-
-
-.phone{
-
-width:220px;
-
-height:440px;
-
-}
-
-
-
-.tablet{
-
-width:330px;
-
-height:230px;
-
-}
-
-
-
-.title{
-
-font-size:42px;
-
-}
-
-
-
-section{
-
-padding:80px 20px;
-
-}
-
-
-
-.card{
-
-width:100%;
-
-}
-
-
-}
-   </style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 
 <body>
-   <!-- LOADER -->
-
 <div class="loader">
 
-<div class="loader-logo">
-SP
-</div>
-
-<p>
-Soncha Production
-</p>
+    <div class="loader-logo">
+        SP
+    </div>
 
 </div>
 
-
-
-
-
-
-
-<!-- NAV -->
+<header>
 
 <nav>
 
-
 <div class="logo">
-
-Soncha<span>Production</span>
-
+SP
 </div>
 
+<button class="menu-toggle" id="menu-toggle">
+☰
+</button>
 
-
-
-<div class="menu">
-
+<div class="nav-links">
 
 <a href="#home">
 Главная
-</a>
-
-
-<a href="#projects">
-Проекты
-</a>
-
-
-<a href="#services">
-Услуги
 </a>
 
 
@@ -1285,223 +46,55 @@ Soncha<span>Production</span>
 </a>
 
 
-<a href="#contact">
-Контакты
+<a href="#projects">
+Проекты
 </a>
 
+
+<a href="#contact">
+Связаться
+</a>
 
 </div>
 
 
 
-
-<button class="mobile-menu-btn" id="mobileMenuBtn">
-
-☰
-
-</button>
-
-
-
-
-
-<button class="theme" id="themeBtn">
-
+<button id="theme-toggle">
 🌙
-
 </button>
-
 
 
 </nav>
 
+</header>
 
 
 
-
-
-
-
-<!-- HERO -->
 
 
 <section class="hero" id="home">
 
 
+<div class="hero-content">
+
+
 <h1>
-
-Soncha
-
+Soncha Production
 </h1>
 
 
-
-
 <p>
-
-Создаю современные сайты и цифровые продукты,
-где дизайн встречается с технологиями.
-
+Создаю современные сайты
+с Apple-стилем, анимациями
+и красивым дизайном.
 </p>
 
 
-
-
-
-<a class="button" href="#contact">
-
-Обсудить проект →
-
+<a class="contact-btn" href="#contact">
+Связаться со мной
 </a>
 
 
-
-
-
-
-<div class="devices">
-
-
-
-<div class="phone">
-
-
-<div class="screen">
-
-Soncha
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-<div class="tablet">
-
-
-<div class="screen">
-
-Production
-
-</div>
-
-
-</div>
-
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- PROJECTS -->
-
-
-<section id="projects" class="reveal">
-
-
-<h2 class="title">
-
-Проекты
-
-</h2>
-
-
-
-
-<div class="cards">
-
-
-<div class="card">
-
-
-<img src="images/website.jpeg">
-
-
-<h3>
-
-Website
-
-</h3>
-
-
-<p>
-
-Современные сайты и цифровые решения.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-
-<img src="images/design.jpg">
-
-
-<h3>
-
-Design
-
-</h3>
-
-
-<p>
-
-UI/UX дизайн и визуальные концепции.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-
-<img src="images/future.jpeg">
-
-
-<h3>
-
-Future
-
-</h3>
-
-
-<p>
-
-Технологии нового поколения.
-
-</p>
-
-
-</div>
-
-
-
 </div>
 
 
@@ -1513,194 +106,99 @@ Future
 
 
 
-
-
-<!-- SERVICES -->
-
-
-<section id="services" class="reveal">
-
-
-<h2 class="title">
-
-Услуги
-
-</h2>
-
-
-
-
-<div class="cards">
-
-
-
-<div class="card">
-
-<h3>
-
-💻 Web
-
-</h3>
-
-
-<p>
-
-Создание современных сайтов.
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-<div class="card">
-
-<h3>
-
-🎨 Design
-
-</h3>
-
-
-<p>
-
-UI/UX и визуальный стиль.
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="card">
-
-<h3>
-
-🚀 Animation
-
-</h3>
-
-
-<p>
-
-Интерактивные эффекты.
-
-</p>
-
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- ABOUT -->
-
-
-<section id="about" class="reveal">
-
-
-<h2 class="title">
-
-Обо мне
-
-</h2>
-
-
-
+<section class="about fade" id="about">
 
 
 <div class="about-box">
 
 
-<h3>
-
-Soncha Production
-
-</h3>
-
+<h2>
+Обо мне
+</h2>
 
 
 <p>
 
-Создаю минималистичные цифровые продукты,
-где дизайн встречается с технологиями.
+Я создаю современные сайты
+с акцентом на дизайн,
+анимации и удобство.
+
+Работаю над проектами
+в стиле Apple:
+минимализм, стеклянные эффекты
+и плавные переходы.
 
 </p>
-
 
 
 
 <div class="skills">
 
 
-<span>HTML5</span>
-
-<span>CSS3</span>
-
-<span>JavaScript</span>
-
-<span>UI/UX</span>
-
-<span>Animation</span>
-
-
+<div>
+💻 Web Design
 </div>
-
-
-
-
-
-
-
-<div class="stats">
 
 
 <div>
-
-<b>
-3+
-</b>
-
-<p>
-Проекта
-</p>
-
+✨ UI / UX
 </div>
-
-
-
 
 
 <div>
+🚀 Frontend
+</div>
 
-<b>
-100%
-</b>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="projects fade" id="projects">
+
+
+<h2>
+Мои проекты
+</h2>
+
+
+
+<div class="project-grid">
+
+
+
+<div class="project-card">
+
+
+<img src="images/design.jpg" alt="Design project">
+
+
+<h3>
+Design Project
+</h3>
+
 
 <p>
-Уникальность
+Современный дизайн сайта
+с минимализмом и Apple-стилем.
 </p>
+
+
+<a href="#" class="project-btn">
+Посмотреть
+</a>
+
 
 </div>
 
@@ -1708,17 +206,56 @@ Soncha Production
 
 
 
-<div>
 
-<b>
-24/7
-</b>
+<div class="project-card">
+
+
+<img src="images/future.jpeg" alt="Future project">
+
+
+<h3>
+Future Project
+</h3>
+
 
 <p>
-Поддержка
+Концепт современного
+цифрового продукта.
 </p>
 
+
+<a href="#" class="project-btn">
+Посмотреть
+</a>
+
+
 </div>
+
+
+
+
+
+
+<div class="project-card">
+
+
+<img src="images/website.jpeg" alt="Website project">
+
+
+<h3>
+Website Project
+</h3>
+
+
+<p>
+Адаптивный сайт
+с красивыми анимациями.
+</p>
+
+
+<a href="#" class="project-btn">
+Посмотреть
+</a>
 
 
 </div>
@@ -1738,49 +275,66 @@ Soncha Production
 
 
 
-<!-- CONTACT -->
+<section class="contact fade" id="contact">
 
 
-<section id="contact" class="reveal">
+<div class="about-box">
 
 
-<h2 class="title">
-
-Связаться
-
+<h2>
+Связаться со мной
 </h2>
 
 
 
+<form 
+class="contact-form"
+action="https://formspree.io/f/xykqrneq"
+method="POST">
 
 
-<form>
-
-
-<input placeholder="Имя">
-
-
-<input placeholder="Email">
-
-
-<textarea placeholder="Сообщение"></textarea>
+<input 
+type="text"
+name="name"
+placeholder="Ваше имя"
+required
+>
 
 
 
+<input 
+type="email"
+name="email"
+placeholder="Ваш Email"
+required
+>
 
-<button class="button" type="button">
 
-Отправить →
+
+<textarea
+name="message"
+placeholder="Ваше сообщение"
+required></textarea>
+
+
+
+<button 
+type="submit"
+class="contact-btn">
+
+Отправить
 
 </button>
-
 
 
 </form>
 
 
+</div>
+
 
 </section>
+
 
 
 
@@ -1791,7 +345,14 @@ Soncha Production
 
 <footer>
 
-© 2026 Soncha Production
+
+<p>
+
+© <span id="year"></span>
+Soncha Production
+
+</p>
+
 
 </footer>
 
@@ -1800,207 +361,7 @@ Soncha Production
 
 
 
-
-
-<script>
-
-
-
-
-
-// THEME
-
-
-const themeBtn =
-document.getElementById("themeBtn");
-
-
-
-themeBtn.onclick = ()=>{
-
-
-document.body.classList.toggle("dark");
-
-
-
-themeBtn.textContent =
-
-document.body.classList.contains("dark")
-
-?
-
-"☀️"
-
-:
-
-"🌙";
-
-
-};
-
-
-
-
-
-
-
-
-
-// MOBILE MENU
-
-
-const mobileBtn =
-document.getElementById("mobileMenuBtn");
-
-
-const menu =
-document.querySelector(".menu");
-
-
-
-mobileBtn.onclick = ()=>{
-
-
-menu.classList.toggle("active");
-
-
-
-mobileBtn.textContent =
-
-menu.classList.contains("active")
-
-?
-
-"✕"
-
-:
-
-"☰";
-
-
-};
-
-
-
-
-
-
-
-
-
-// GLOW MOVE
-
-
-document.querySelector(".hero")
-.addEventListener("mousemove",(event)=>{
-
-
-let hero =
-document.querySelector(".hero");
-
-
-let x =
-(event.clientX / window.innerWidth - .5) * 40;
-
-
-let y =
-(event.clientY / window.innerHeight - .5) * 40;
-
-
-
-hero.style.setProperty(
-"--moveX",
-x+"px"
-);
-
-
-
-hero.style.setProperty(
-"--moveY",
-y+"px"
-);
-
-
-
-});
-
-
-
-
-
-
-
-
-
-// REVEAL
-
-
-function reveal(){
-
-
-document.querySelectorAll(".reveal")
-.forEach(el=>{
-
-
-if(
-el.getBoundingClientRect().top
-<
-window.innerHeight-100
-){
-
-
-el.classList.add("active");
-
-
-}
-
-
-});
-
-
-}
-
-
-
-window.addEventListener(
-"scroll",
-reveal
-);
-
-
-reveal();
-
-
-
-
-
-
-
-
-
-// CARDS
-
-
-document.querySelectorAll(".card")
-.forEach((card,index)=>{
-
-
-setTimeout(()=>{
-
-
-card.classList.add("show");
-
-
-},index*200);
-
-
-
-});
-
-
-
-</script>
-
+<script src="script.js"></script>
 
 
 </body>
