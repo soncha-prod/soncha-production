@@ -3354,3 +3354,18 @@ body.light-theme {
 }
 
 }
+.services .about-box {
+    text-align: center;
+    width: 100%;
+}
+
+
+.services .service-grid {
+    width: 100%;
+    justify-content: center;
+}
+
+
+.services .service-card {
+    text-align: center;
+}
