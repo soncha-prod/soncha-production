@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Soncha Production</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+<div class="loader">
+
+    <div class="loader-logo">
+        SP
+    </div>
+
+</div>
+
+<header>
+
+<nav>
+
+<div class="logo">
+SP
+</div>
+
+<button class="menu-toggle" id="menu-toggle">
+☰
+</button>
+
+<div class="nav-links">
+
+<a href="#home">
+Главная
+</a>
+
+
+<a href="#about">
+Обо мне
+</a>
+
+
+<a href="#projects">
+Проекты
+</a>
+
+
+<a href="#contact">
+Связаться
+</a>
+
+</div>
+
+
+
+<button id="theme-toggle">
+🌙
+</button>
+
+
+</nav>
+
+</header>
+
+
+
+
+
+<section class="hero" id="home">
+
+
+<div class="hero-content">
+
+
+<h1>
+Soncha Production
+</h1>
+
+
+<p>
+Создаю современные сайты
+с Apple-стилем, анимациями
+и красивым дизайном.
+</p>
+
+
+<a class="contact-btn" href="#contact">
+Связаться со мной
+</a>
+
+
+</div>
+
+
+</section>
+
+<section class="about fade" id="about">
+
+
+<div class="about-box">
+
+
+<h2>
+Обо мне
+</h2>
+
+
+<p>
+
+Я создаю современные сайты
+с минималистичным дизайном,
+плавными анимациями и
+Apple-стилем.
+
+Моя цель — делать проекты,
+которые выглядят дорого,
+быстро работают и удобно
+используются на любых устройствах.
+
+</p>
+
+
+
+<div class="stats">
+
+
+<div class="stat-card">
+
+<h3>
+3+
+</h3>
+
+<p>
+Проекта
+</p>
+
+</div>
+
+
+
+<div class="stat-card">
+
+<h3>
+100%
+</h3>
+
+<p>
+Адаптация
+</p>
+
+</div>
+
+
+
+<div class="stat-card">
+
+<h3>
+UI/UX
+</h3>
+
+<p>
+Дизайн
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="skills">
+
+
+<div>
+💻 HTML / CSS
+</div>
+
+
+<div>
+⚡ JavaScript
+</div>
+
+
+<div>
+✨ UI / UX Design
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="projects fade" id="projects">
+
+
+<h2>
+Мои проекты
+</h2>
+
+
+<div class="project-grid">
+
+
+<div class="project-card">
+
+
+<img src="images/design.jpg" alt="Design Project">
+
+
+<div class="project-info">
+
+<h3>
+Design Project
+</h3>
+
+<p>
+UI/UX дизайн современного сайта.
+</p>
+
+
+<a href="#" class="project-btn">
+Посмотреть
+</a>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="project-card">
+
+
+<img src="images/future.jpeg" alt="Future Project">
+
+
+<div class="project-info">
+
+<h3>
+Future Project
+</h3>
+
+<p>
+Концепт сайта будущего.
+</p>
+
+
+<a href="#" class="project-btn">
+Посмотреть
+</a>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="project-card">
+
+
+<img src="images/website.jpeg" alt="Website Project">
+
+
+<div class="project-info">
+
+<h3>
+Website Project
+</h3>
+
+<p>
+Современный frontend проект.
+</p>
+
+
+<a href="#" class="project-btn">
+Посмотреть
+</a>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="contact fade" id="contact">
+
+
+<div class="about-box">
+
+
+<h2>
+Связаться со мной
+</h2>
+
+
+
+<form 
+class="contact-form"
+action="https://formspree.io/f/xykqrneq"
+method="POST">
+
+
+<input 
+type="text"
+name="name"
+placeholder="Ваше имя"
+required
+>
+
+
+
+<input 
+type="email"
+name="email"
+placeholder="Ваш Email"
+required
+>
+
+
+
+<textarea
+name="message"
+placeholder="Ваше сообщение"
+required></textarea>
+
+
+
+<button 
+type="submit"
+class="contact-btn">
+
+Отправить
+
+</button>
+
+
+</form>
+
+
+</div>
+
+
+</section>
+
+
+
+<footer>
+
+
+<div class="footer-content">
+
+
+<h3>
+Soncha Production
+</h3>
+
+
+<p>
+Создаю современные сайты
+в стиле Apple
+</p>
+
+
+
+<div class="social-links">
+
+
+<a href="https://github.com/soncha-prod" target="_blank">
+GitHub
+</a>
+
+
+<a href="https://www.tiktok.com/@soncha_production" target="_blank">
+TikTok
+</a>
+
+
+<a href="mailto:s.sharnina@my18.ru">
+Email
+</a>
+
+
+</div>
+
+
+
+<p class="copyright">
+
+© <span id="year"></span> Soncha Production
+
+</p>
+
+
+</div>
+
+
+</footer>
+
+
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
