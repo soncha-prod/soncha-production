@@ -3274,3 +3274,8 @@ body * {
                 border-color 0.2s ease,
                 box-shadow 0.2s ease;
 }
+/* Ускорение смены темы */
+body.light-theme,
+body.light-theme * {
+    transition-duration: 0.2s !important;
+}
