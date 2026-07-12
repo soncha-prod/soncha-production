@@ -3279,3 +3279,15 @@ body.light-theme,
 body.light-theme * {
     transition-duration: 0.2s !important;
 }
+html {
+    background: #0b0614;
+}
+
+body.light-theme,
+body.light-theme html {
+    background: #ffffff;
+}
+
+body.light-theme {
+    color: #111;
+}
