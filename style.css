@@ -15,32 +15,58 @@ html{
 
 :root{
 
-    --accent:#0071e3;
-    --accent2:#7c5cff;
+    /* Accent */
 
-    --text:#111111;
+    --accent:#8B5CF6;
+    --accent2:#A855F7;
+
+    /* Text */
+
+    --text:#1b1b1f;
     --text-light:#6e6e73;
 
-    --background:#ffffff;
+    /* Apple Pearl Glass */
 
-    --card:rgba(255,255,255,.72);
+    --background:
+    linear-gradient(
+        180deg,
+        #FDFBFF 0%,
+        #F7F3FF 45%,
+        #EFE8FF 100%
+    );
 
-    --radius:32px;
+    --card:
+    rgba(255,255,255,.62);
+
+    --border:
+    rgba(255,255,255,.72);
 
     --shadow:
-    0 20px 60px rgba(0,0,0,.08);
+    0 20px 60px rgba(139,92,246,.12);
+
+    --radius:32px;
 
 }
 
 body.dark{
 
-    --background:#000;
+    --background:
+    linear-gradient(
+        180deg,
+        #09090d,
+        #111114
+    );
 
-    --text:#fff;
+    --text:#ffffff;
 
-    --text-light:#b5b5b7;
+    --text-light:#b8b8c4;
 
-    --card:rgba(30,30,30,.72);
+    --card:rgba(22,22,28,.58);
+
+    --border:rgba(255,255,255,.10);
+
+    --shadow:
+    0 24px 60px rgba(0,0,0,.45);
 
 }
 
