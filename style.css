@@ -675,11 +675,12 @@ transform:translateY(-18px);
     padding: 50px;
     border-radius: 35px;
 
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(20px);
-
-    border: 1px solid rgba(255,255,255,0.1);
-
+    background: rgba(255,255,255,.72);
+    backdrop-filter: blur(28px);
+-webkit-backdrop-filter: blur (28px);
+    border: 1px solid rgba(255,255,255,.65);
+box-shadow:
+   0 20px 45px rgba (124,92,255,.08);
     animation: fadeUp 1s ease;
 }
 
@@ -745,13 +746,13 @@ transform:translateY(-18px);
     background:
     linear-gradient(
         145deg,
-        rgba(255,255,255,.12),
-        rgba(255,255,255,.03)
+        rgba(255,255,255,.75),
+        rgba(255,255,255,.45)
     );
 
 
     border:
-    1px solid rgba(255,255,255,.12);
+    1px solid rgba(255,255,255,.65);
 
 
     transition:.5s;
@@ -3430,5 +3431,22 @@ body.light-theme .project-btn{
 
     box-shadow:
         0 8px 25px rgba(166,110,255,.25);
+
+}
+body.dark .about-box,
+body.dark .project-card,
+body.dark .service-card,
+body.dark .stat-card{
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.08),
+rgba(255,255,255,.03)
+);
+
+border:1px solid rgba(255,255,255,.12);
+
+box-shadow:none;
 
 }
