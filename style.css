@@ -1555,11 +1555,12 @@ body.light-theme {
     background:
     linear-gradient(
         180deg,
-        #ffffff,
-        #f1f1f7
+        #fcfbff 0%,
+        #f7f3ff 45%,
+       #efe8ff 100%
     );
 
-    color:#111;
+    color:#1d1d1f;
 
 }
 /* ===== LIGHT THEME ELEMENTS ===== */
@@ -3401,5 +3402,33 @@ body.light-theme {
     transform:translateY(-3px);
 
     background:rgba(180,120,255,.18);
+
+}
+/* LIGHT THEME GLASS */
+
+body.light-theme header,
+body.light-theme nav,
+body.light-theme .about-box,
+body.light-theme .project-card,
+body.light-theme .service-card,
+body.light-theme .stat-card {
+
+    background: rgba(255,255,255,.45);
+
+    border: 1px solid rgba(255,255,255,.65);
+
+    backdrop-filter: blur(30px);
+
+    -webkit-backdrop-filter: blur(30px);
+
+    box-shadow:
+        0 12px 35px rgba(120,90,180,.08);
+
+}
+body.light-theme .contact-btn,
+body.light-theme .project-btn{
+
+    box-shadow:
+        0 8px 25px rgba(166,110,255,.25);
 
 }
