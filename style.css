@@ -182,13 +182,14 @@ align-items:center;
 
 border-radius:999px;
 
-background:rgba(255,255,255,.55);
+background:var(--card);
 
-backdrop-filter:blur(22px);
+backdrop-filter: blur(22px);
 
--webkit-backdrop-filter:blur(22px);
+-webkit-backdrop-filter: blur(22px);
+   border: 1px solid var(--border);
 
-box-shadow:0 15px 45px rgba(0,0,0,.08);
+box-shadow: var (--shadow);
 
 z-index:1000;
 
